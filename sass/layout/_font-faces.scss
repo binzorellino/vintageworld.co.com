@@ -1,0 +1,4 @@
+@each $font in $font-family-list {
+  @include font-face($font);
+
+}

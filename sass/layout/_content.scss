@@ -1,0 +1,290 @@
+.entry-content,
+.template-section {
+  @include font-size(17px);
+  line-height: 1.5em;
+  color: $black;
+
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    @include clearfix();
+
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $roboto-bold;
+    color: $black;
+    line-height: 1.3em;
+    text-align: left;
+    font-weight: normal;
+
+  }
+
+  &.page-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: left;
+
+    }
+
+  }
+
+  h2 {
+    @include font-size(32px);
+
+  }
+
+  h3 {
+    @include font-size(28px);
+
+  }
+
+  h4 {
+    @include font-size(22px);
+
+  }
+
+  h5 {
+    @include font-size(18px);
+
+  }
+
+  h6 {
+    @include font-size(16px);
+
+  }
+
+  .headline {
+    font-family: $roboto-bold;
+    @include font-size(22px);
+    color: $black;
+    margin-bottom: 35px;
+
+  }
+
+  p {
+    @include font-size(17px);
+    line-height: 1.5em;
+    color: $black;
+    text-align: left;
+
+  }
+
+  a {
+    color: $black;
+    text-decoration: underline;
+
+    &:hover {
+      color: $black;
+
+    }
+
+  }
+
+  img {
+    max-width: 100%!important;
+    height: auto!important;
+
+  }
+
+  // Image classes
+  .aligncenter,
+  .alignnone {
+    max-width: 100%;
+    display: block;
+    margin: 40px auto;
+
+  }
+
+  .alignleft {
+    max-width: 100%;
+    float: left;
+    padding: 7px 20px 20px 0;
+
+  }
+
+  .alignright {
+    max-width: 100%;
+    float: right;
+    padding: 7px 0 20px 20px;
+
+  }
+
+  .circle {
+    display: block;
+    @include border-radius(50%);
+    border: 0;
+
+    &.alignleft {
+      padding: 0;
+      margin: 7px 20px 20px 0;
+
+    }
+
+    &.alignright {
+      padding: 0;
+      margin: 7px 0 20px 20px;
+
+    }
+
+  }
+
+  strong {
+    font-family: $roboto-bold;
+    font-weight: normal;
+
+  }
+
+  ul, ol {
+    margin-top: 0;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    padding: 0;
+
+    li {
+      position: relative;
+      list-style: none;
+      margin: 5px 0 8px;
+      padding-left: .3em;
+
+      &::before {
+        position: absolute;
+        top: -1px;
+        left: -1em;
+        content: '»';
+        color: $black;
+        @include font-size(20px);
+        font-family: $roboto-bold;
+
+      }
+
+    }
+
+  }
+
+  ol {
+    counter-reset: counter;
+
+    li {
+      margin: 5px 0 10px;
+      list-style: none;
+
+      &::before {
+        top: 0;
+        content: counter(counter);
+        counter-increment: counter;
+        @include font-size(17px);
+
+      }
+
+    }
+
+  }
+
+  figure {
+    margin: 30px 0 100px;
+    width: 100%;
+    max-width: 100%;
+
+  }
+
+  table {
+    width: 100%!important;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    tr {
+
+      &:first-child {
+
+        td {
+          padding: 15px;
+
+        }
+
+      }
+
+    }
+
+    th {
+      padding: 8px 15px;
+
+      strong {
+        font-family: $roboto-bold;
+        font-weight: normal;
+
+      }
+
+    }
+
+    td {
+      padding: 8px 15px;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-align: left!important;
+        margin: 0;
+        padding: 0;
+
+      }
+
+    }
+
+  }
+
+  blockquote {
+    font-family: $roboto-italic;
+    font-style: normal;
+    font-weight: normal;
+    border-left: 10px solid $black;
+    @include font-size(25px);
+    line-height: 1.5em;
+    margin: 30px 0;
+    overflow-wrap: break-word;
+    padding: 15px 15px;
+    white-space: pre-wrap;
+    background: url('images/double-quote_xs.png') no-repeat top right;
+
+    &::before,
+    &::after {
+      content: none;
+
+    }
+
+    p {
+      color: $black;
+      margin: 0;
+      padding: 0;
+      @include font-size(25px);
+
+    }
+
+  }
+
+  pre {
+    background: lighten($black, 15%) none repeat scroll 0 0;
+    border-left: 5px solid $black;
+    color: $black;
+    font-size: 1.125rem;
+    line-height: 1.5em;
+    margin: 1em 0;
+    overflow-wrap: break-word;
+    padding: 15px;
+    white-space: pre-wrap;
+
+  }
+
+}

@@ -1,0 +1,203 @@
+.share-post-wide {
+  width: 100%;
+  margin: 55px 0 30px;
+  padding: 0;
+  text-align: left;
+
+  h3 {
+    font-family: $roboto-bold;
+    @include font-size(26px);
+    font-weight: normal;
+    color: $black;
+    line-height: 1.4em;
+    margin: 0;
+    padding: 30px 0 35px;
+    display: block;
+
+  }
+
+  a {
+    padding: 9px 18px;
+    margin-right: 0;
+    color: $black;
+    text-align: center;
+    @include font-size(24px);
+    @include transition(background .3s ease-in);
+
+    &:last-child {
+      margin-right: 0;
+
+    }
+
+    .title {
+      display: none;
+
+    }
+
+    .count {
+      margin: 0 0 0 15px;
+
+    }
+
+    &.only-mobile-device {
+      display: none;
+
+    }
+
+    &.facebook {
+      background: $bc-facebook;
+      color: $white;
+
+      &:hover {
+        background: darken($bc-facebook, 10%);
+        color: $white;
+
+      }
+
+    }
+
+    &.linkedin {
+      background: $bc-linkedin;
+      color: $white;
+
+      &:hover {
+        background: darken($bc-linkedin, 10%);
+        color: $white;
+
+      }
+
+    }
+
+    &.twitter {
+      background: $bc-twitter;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: darken($bc-twitter, 10%);
+
+      }
+
+    }
+
+    &.googleplus {
+      background: $bc-google-plus;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: darken($bc-google-plus, 10%);
+
+      }
+
+    }
+
+    &.pinterest {
+      background: $bc-pinterest;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: darken($bc-pinterest, 10%);
+
+      }
+
+    }
+
+    &.viber {
+      background: $bc-viber;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: darken($bc-viber, 10%);
+
+      }
+
+    }
+
+    &.whatsapp {
+      background: $bc-whatsapp-2;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: darken($bc-whatsapp-2, 10%);
+
+      }
+
+    }
+
+    &.messenger {
+      background: $bc-messenger;
+      color: $white;
+
+      &:hover {
+        color: $white;
+        background: darken($bc-messenger, 10%);
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen($null, $xl) {
+
+  .share-post-wide {
+
+    a {
+
+      &.only-mobile-device {
+        display: table-cell;
+
+      }
+
+      .count {
+        margin: 0 0 0 10px;
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen($null, $sm) {
+
+  .share-post-wide {
+    margin: 55px 0 30px;
+
+    &::before {
+      height: 5px;
+
+    }
+
+    h3 {
+      @include font-size(22px);
+      padding: 20px 0 25px;
+
+    }
+
+    a {
+      padding: 9px 13px;
+      @include font-size(24px);
+
+      .title {
+        display: none;
+
+      }
+
+      .count {
+        display: none;
+
+      }
+
+    }
+
+  }
+
+}

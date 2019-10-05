@@ -1,0 +1,120 @@
+$gridColumnCount      : 12;
+$gridGutterWidth      : 0;
+$gridColumnPadding    : 0;
+$gridMaxWidth         : $max-width-content;
+$gridMargin           : 0;
+
+@function gridColumnWidth() {
+  @return $gridMaxWidth / $gridColumnCount;
+
+}
+
+@function gridColumnWidthCalc($colNumber) {
+  @if $gridGutterWidth == 0 {
+    @return percentage($colNumber / $gridColumnCount);
+  }
+  @else {
+    @return percentage((($colNumber / $gridColumnCount) - gutterCalc(false) ));
+  }
+}
+
+
+@mixin columns($columnSpan: 1) {
+  $number-of-blocks-in-container: $gridColumnCount / $columnSpan;
+  $total-width-of-all-gutters:    gutterCalc(false) * ($number-of-blocks-in-container - 1);
+  $total-width-of-all-blocks:     1 - $total-width-of-all-gutters;
+  $width-of-a-single-block:       $total-width-of-all-blocks / $number-of-blocks-in-container;
+  width:                          percentage($width-of-a-single-block);
+}
+
+@function gutterCalc($showUnit: true) {
+  @if $showUnit == true {
+    @return percentage($gridGutterWidth / $gridMaxWidth);
+  } @else {
+    @return $gridGutterWidth / ($gridMaxWidth - ($gridMargin * 2));
+  }
+}
+
+@mixin gridColumn() {
+  @if $gridGutterWidth > 0 {
+    margin-left: gutterCalc();
+  }
+  @if $gridColumnPadding > 0 {
+    padding: $gridColumnPadding + px;
+  }
+  position: relative;
+  clear: none;
+
+  &:first-child {
+    margin-left: 0;
+
+  }
+
+}
+
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+
+  }
+
+  &:after {
+    clear: both;
+
+  }
+
+}
+
+.left {
+  float: left;
+
+}
+
+.right {
+  float: right;
+
+}
+
+.container {
+  width: $gridMaxWidth + px;
+  max-width: 100%;
+  margin: 0 auto;
+
+}
+
+.quiz-container {
+  width: ($gridMaxWidth - 10) + px;
+  max-width: 100%;
+  margin: 0 auto;
+
+}
+
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  @include clearfix();
+
+}
+
+.col {
+  @include gridColumn();
+
+}
+
+@for $i from 1 to $gridColumnCount + 1 {
+  .col-#{$i}  { @include columns($i); }
+}
+
+@include screen($null, $xxl) {
+
+  .container {
+    padding: 0 15px;
+
+  }
+
+}

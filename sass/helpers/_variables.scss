@@ -1,0 +1,84 @@
+// Base config
+$base-fontsize:              16px;
+$base-color:                 #000;
+$base-background-color:      #fff;
+
+$basepx:                     16;
+
+
+// Site content max width
+$max-width-content:          1240;
+$max-width-content-px:       1240 + 'px';
+$max-width-textpage:         1000px;
+
+// BookAntiqua fonts
+$bookntiqua:                 'BookAntiqua';
+$bookntiqua-bold:            'BookAntiqua-Bold';
+
+// Websymbols
+$websymbol:                  'websymbols-regular-webfont';
+
+// Set font family list
+$font-family-list:           $bookntiqua $bookntiqua-bold;
+
+// Set Base font family
+$base-font-family:           $roboto-regular;
+
+// Colors
+$white:                      #ffffff;
+
+$black:                      #000000;
+$black-1:                    #010101;
+
+$blue:                       #1c2141;
+
+$gray:                       #c8c6c6;
+$gray:                       #848383;
+
+$pink:                       #dc9b9b;
+$pink-1:                     #dc7c7c;
+$pink-2:                     #ebcfc4;
+$pink-3:                     #edb6b6;
+
+$purple:                     #3a2d3b;
+
+//@import 'brandcolors';
+
+
+// Grid variables - Based on Bootstrap 3 grid system
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$grid-columns:               12 !default;
+$grid-gutter-width:          30px !default;
+$container-tablet:           (720px + $grid-gutter-width) !default;
+$container-sm:               $container-tablet !default;
+$container-desktop:          (940px + $grid-gutter-width) !default;
+$container-md:               $container-desktop !default;
+$container-large-desktop:    (($max-width-content - $grid-gutter-width) + $grid-gutter-width) !default;
+$container-lg:               $container-large-desktop !default;
+
+
+// Breakpoints for media queries
+$null:                           0px;
+$xs:                             320px;
+$sm:                             480px;
+$md:                             768px;
+$lg:                             1024px;
+$xl:                             1266px;
+$xxl:                            1366px;
+$xxxl:                           1440px;
+$xxxxl:                          1775px;
+$xxxxxl:                         1900px;

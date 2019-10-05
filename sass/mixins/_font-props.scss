@@ -1,0 +1,14 @@
+@mixin font-props($family, $size, $weight, $line-height, $color) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin font-extraprops($style, $variant, $decoration, $transform) {
+  font-style: $style;
+  font-variant: $variant;
+  text-decoration: $decoration;
+  text-transform: $transform;
+}
