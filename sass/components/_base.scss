@@ -43,7 +43,7 @@ body {
   font-family: $base-font-family;
   font-weight: normal;
   line-height: 1.5em;
-  @include font-size($base-fontsize);
+  @include font-size(19px);
 
 }
 
