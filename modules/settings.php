@@ -37,8 +37,8 @@
 
   add_image_size( 'base-thumb', 397, 265, true );
 
-  define( 'DEVELOPER_NAME', 'Kreatív Vonalak' );
-  define( 'DEVELOPER_URL', 'http://www.kreativvonalak.hu/' );
+  define( 'DEVELOPER_NAME', 'WebAction' );
+  define( 'DEVELOPER_URL', 'https://webaction.hu/' );
 
   define( 'DISABLE_COMMENTS', TRUE );
   define( 'DISABLE_EMOJI', TRUE );
