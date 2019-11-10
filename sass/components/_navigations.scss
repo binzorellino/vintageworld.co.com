@@ -1,0 +1,45 @@
+[class^="menu-"][class$="-container"] {
+
+  #fejlec-menu {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    .menu-item {
+      list-style: none;
+      display: inline-block;
+
+      a {
+        position: relative;
+        display: block;
+        padding: 5px 10px;
+        color: $black;
+        @include font-size(21px);
+        @include transition(color .3s ease);
+
+        &::after {
+          content: '';
+          margin: 10px auto 0;
+          display: block;
+          height: 1px;
+          width: 0;
+          background-color: $pink-1;
+          @include transition(width .3s ease);
+        }
+      }
+
+      &:hover,
+      &.current-menu-item,
+      &.current_page_item {
+
+        a {
+          color: $pink;
+
+          &::after {
+            width: calc(100% - 6px);
+          }
+        }
+      }
+    }
+  }
+}
