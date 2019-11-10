@@ -12,17 +12,17 @@ $max-width-content-px:       1240 + 'px';
 $max-width-textpage:         1000px;
 
 // BookAntiqua fonts
-$bookntiqua:                 'BookAntiqua';
-$bookntiqua-bold:            'BookAntiqua-Bold';
+$bookantiqua:                'BookAntiqua';
+$bookantiqua-bold:           'BookAntiqua-Bold';
 
 // Websymbols
 $websymbol:                  'websymbols-regular-webfont';
 
 // Set font family list
-$font-family-list:           $bookntiqua $bookntiqua-bold;
+$font-family-list:           $bookantiqua $bookantiqua-bold;
 
 // Set Base font family
-$base-font-family:           $roboto-regular;
+$base-font-family:           $bookantiqua;
 
 // Colors
 $white:                      #ffffff;
