@@ -17,7 +17,7 @@
   h4,
   h5,
   h6 {
-    font-family: $roboto-bold;
+    font-family: $bookantiqua;
     color: $black;
     line-height: 1.3em;
     text-align: left;
@@ -64,7 +64,7 @@
   }
 
   .headline {
-    font-family: $roboto-bold;
+    font-family: $bookantiqua;
     @include font-size(22px);
     color: $black;
     margin-bottom: 35px;
@@ -139,7 +139,7 @@
   }
 
   strong {
-    font-family: $roboto-bold;
+    font-family: $bookantiqua-bold;
     font-weight: normal;
 
   }
@@ -163,7 +163,7 @@
         content: '»';
         color: $black;
         @include font-size(20px);
-        font-family: $roboto-bold;
+        font-family: $bookantiqua-bold;
 
       }
 
@@ -219,7 +219,7 @@
       padding: 8px 15px;
 
       strong {
-        font-family: $roboto-bold;
+        font-family: $bookantiqua-bold;
         font-weight: normal;
 
       }
@@ -246,7 +246,7 @@
   }
 
   blockquote {
-    font-family: $roboto-italic;
+    font-family: $bookantiqua;
     font-style: normal;
     font-weight: normal;
     border-left: 10px solid $black;
