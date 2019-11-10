@@ -4,7 +4,7 @@
   define( 'THEME_DIR', get_template_directory() );
   define( 'THEME_URL', get_template_directory_uri() );
 
-  define( 'TEXTDOMAIN', '' );
+  define( 'TEXTDOMAIN', 'vintageworld' );
 
   add_action( 'after_setup_theme', 'theme_setup' );
   function theme_setup() {
