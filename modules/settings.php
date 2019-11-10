@@ -31,6 +31,7 @@
   function template_scripts() {
     wp_enqueue_style( TEXTDOMAIN.'-style', get_stylesheet_uri() );
     wp_enqueue_script('jquery');
+    wp_enqueue_script( TEXTDOMAIN.'-bxslider-js', THEME_URL . '/javascripts/plugins/bxslider/jquery.bxslider.min.js', array(), '', false );
     wp_enqueue_script( TEXTDOMAIN.'-main', THEME_URL . '/javascripts/main.min.js', array(), '', false );
   }
 
