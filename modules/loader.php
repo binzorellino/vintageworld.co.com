@@ -27,3 +27,5 @@
   include_once 'custom.php';
 
   include_once 'extra-options.php';
+
+  include_once 'types/cpt-heroslider.php';

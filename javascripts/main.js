@@ -79,6 +79,39 @@
 
     }
 
+    // -- főoldali slider -------------------------------------------------
+      if ( $( '.heroslider__container' ).length > 0 ) {
+        var heroSlider = $('.heroslider__container').bxSlider({
+                  //'mode': 'horizontal',
+                  //'mode': 'vertical',
+                    'mode': 'fade',
+                'controls': false,
+                   'pager': false,
+          'adaptiveHeight': false,
+                    'auto': true,
+            'infiniteLoop': true,
+             'slideMargin': 0,
+            'onSlideAfter': function() { heroSlider.stopAuto(); heroSlider.startAuto(); },
+                'nextText': '<span>></span>',
+                'prevText': '<span><</span>',
+                   'speed': 1000,
+                   'pause': 5000,
+                //'easing': 'linear',
+                  'easing': 'ease',
+                //'easing': 'ease-in',
+                //'easing': 'ease-out',
+                //'easing': 'ease-in-out',
+                //'easing': 'cubic-bezier(n,n,n,n)',
+           'preloadImages': 'visible',
+             'tickerHover': true,
+         //'touchEnabled' : false,
+            //'slideWidth': 620,
+               'minSlides': 1,
+               'maxSlides': 10
+        });
+      }
+    // --------------------------------------------------------------------
+
     $(window).load(function() {
     });
 

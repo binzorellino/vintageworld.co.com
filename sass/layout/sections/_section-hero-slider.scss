@@ -1,0 +1,56 @@
+.heroslider-section {
+  max-width: 2000px;
+  margin: auto;
+  
+  .heroslider__container {
+
+    .heroslider__item {
+
+      .heroslider__content {
+        height: 418px;
+        background-size: cover;
+        background-position: center;
+
+        .container {
+          height: 100%;
+
+          .row {
+            height: 100%;
+
+            .col-md-12 {
+              height: 100%;
+            }
+          }
+        }
+
+        .heroslider__text {
+          position: absolute;
+          top: 50%;
+          right: 50px;
+          margin: auto;
+          color: $white;
+          padding: 35px;
+          line-height: 1.4;
+          max-width: 500px;
+          border: 3px solid $white;
+          text-align: center;
+          text-shadow: 0px 0px 16px $black;
+          @include font-size(32px);
+          @include transform(translateY(-50%));
+        }
+      }
+    }
+  }
+
+  .heroslider_bottom {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $bookantiqua-bold;
+    padding: 16px 0;
+    background-color: $pink-2;
+    @include font-size(25px);
+
+    .heroslider_bottom {
+    }
+  }
+}
