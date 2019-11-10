@@ -1,0 +1,432 @@
+.comingsoon-section {
+
+  .comingsoon__container {
+    width: 915px;
+    max-width: 100%;
+    margin: 175px auto 0;
+    text-align: center;
+
+    .comingsoon__logo-wrapper {
+
+      .comingsoon__logo-img {
+        position: relative;
+        z-index: 1;
+      }
+
+      .comingsoon__logo-text {
+        position: relative;
+        color: $pink-3;
+        @include transform(translate(20px, -128px));
+        display: block;
+        line-height: .5;
+        @include font-size(184px);
+      }
+    }
+
+    .comingsoon__title-wrapper {
+      border: solid 8px $black;
+
+      .comingsoon__title {
+        line-height: 1.1;
+        margin: 0;
+        @include font-size(207px);
+      }
+    }
+
+    .comingsoon__subscribe {
+
+      .comingsoon__subtitle {
+        line-height: 1;
+        margin: 200px 0 50px 0;
+        @include font-size(101px);
+      }
+
+      .comingsoon__divider {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $blue;
+      }
+
+      .comingsoon__offer {
+        display: block;
+        margin: 15px 0;
+        @include font-size(27px);
+      }
+
+      .comingsoon__desc {
+        display: block;
+        line-height: 1.2;
+        margin: 1em auto;
+        width: 815px;
+        max-width: 100%;
+        @include font-size(39px);
+      }
+
+      .comingsoon__newsletter {
+        line-height: 1;
+        display: block;
+        margin-top: 105px;
+        @include font-size(36px);
+
+        .comingsoon__formlabel {
+          display: block;
+          line-height: 1;
+        }
+
+        .comingsoon__forminput {
+          display: block;
+          line-height: 1;
+          width: 90%;
+          margin: 25px auto 33px;
+          border: 1px solid $blue;
+          padding: 27px;
+          max-width: 100%;
+        }
+
+        .comingsoon__formsubmit {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          border: none;
+          padding: 32px 95px;
+          background-color: $black;
+          color: $white;
+          line-height: 1;
+          cursor: pointer;
+          @include font-size(40px);
+          @include transition(background-color .3s ease);
+
+          &:hover {
+            background-color: $pink
+          }
+        }
+      }
+    }
+  }
+}
+
+.comingsoon__footer {
+  max-width: 2000px;
+  margin: 100px auto 0;
+  line-height: 0;
+
+  .comingsoon__footer-img {
+
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .comingsoon-section {
+
+    .comingsoon__container {
+      margin-top: 30px;
+
+      .comingsoon__logo-wrapper {
+
+        .comingsoon__logo-img {
+          padding: 0;
+        }
+
+        .comingsoon__logo-text {
+          transform: translate(0, -38px);
+          @include font-size(73px);
+        }
+      }
+
+      .comingsoon__title-wrapper {
+        border-width: 4px;
+        margin-top: 25px;
+
+        .comingsoon__title {
+          padding: 0 10px;
+          @include font-size(80px);
+        }
+      }
+
+      .comingsoon__subscribe {
+
+        .comingsoon__subtitle {
+          margin-top: 35px;
+          margin-bottom: 35px;
+          @include font-size(48px);
+        }
+
+        .comingsoon__divider {
+
+        }
+
+        .comingsoon__offer {
+          margin: 25px 0;
+        }
+
+        .comingsoon__desc {
+          @include font-size(18px);
+        }
+
+        .comingsoon__newsletter {
+          margin-top: 45px;
+          @include font-size(25px);
+
+          .comingsoon__formlabel {
+
+          }
+
+          .comingsoon__forminput {
+            margin-bottom: 25px;
+            padding: 15px;
+            width: 100%;
+            @include font-size(17px);
+          }
+
+          .comingsoon__formsubmit {
+            padding: 15px 40px;
+            @include font-size(25px);
+            
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comingsoon__footer {
+    margin-top: 60px;
+
+    .comingsoon__footer-img {
+
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+  .comingsoon-section {
+
+    .comingsoon__container {
+
+      .comingsoon__logo-wrapper {
+
+        .comingsoon__logo-img {
+          width: 480px;
+        }
+
+        .comingsoon__logo-text {
+          transform: translate(0,-50px);
+        }
+      }
+
+      .comingsoon__title-wrapper {
+
+        .comingsoon__title {
+          padding: 30px 37px;
+        }
+      }
+
+      .comingsoon__subscribe {
+
+        .comingsoon__subtitle {
+          margin-top: 60px;
+        }
+
+        .comingsoon__divider {
+
+        }
+
+        .comingsoon__offer {
+
+        }
+
+        .comingsoon__desc {
+
+        }
+
+        .comingsoon__newsletter {
+
+          .comingsoon__formlabel {
+
+          }
+
+          .comingsoon__forminput {
+            width: 480px;
+            margin-bottom: 20px;
+          }
+
+          .comingsoon__formsubmit {
+            
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comingsoon__footer {
+
+    .comingsoon__footer-img {
+
+    }
+  }
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .comingsoon-section {
+
+    .comingsoon__container {
+      margin-top: 30px;
+
+      .comingsoon__logo-wrapper {
+
+        .comingsoon__logo-img {
+          padding: 50px;
+        }
+
+        .comingsoon__logo-text {
+          transform: translate(20px,-116px);
+          @include font-size(133px);
+        }
+      }
+
+      .comingsoon__title-wrapper {
+
+        .comingsoon__title {
+          padding: 10px 85px;
+          @include font-size(135px);
+        }
+      }
+
+      .comingsoon__subscribe {
+
+        .comingsoon__subtitle {
+          margin-top: 135px;
+          @include font-size(86px);
+        }
+
+        .comingsoon__divider {
+
+        }
+
+        .comingsoon__offer {
+
+        }
+
+        .comingsoon__desc {
+          @include font-size(31px);
+        }
+
+        .comingsoon__newsletter {
+          margin-top: 78px;
+          @include font-size(31px);
+
+          .comingsoon__formlabel {
+
+          }
+
+          .comingsoon__forminput {
+            padding: 15px;
+          }
+
+          .comingsoon__formsubmit {
+            padding: 20px 60px;
+            
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comingsoon__footer {
+
+    .comingsoon__footer-img {
+
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .comingsoon-section {
+
+    .comingsoon__container {
+      margin-top: 75px;
+
+      .comingsoon__logo-wrapper {
+
+        .comingsoon__logo-img {
+          padding: 50px;
+        }
+
+        .comingsoon__logo-text {
+          transform: translate(20px,-116px);
+          @include font-size(133px);
+        }
+      }
+
+      .comingsoon__title-wrapper {
+
+        .comingsoon__title {
+          padding: 0 110px;
+          @include font-size(154px);
+        }
+      }
+
+      .comingsoon__subscribe {
+
+        .comingsoon__subtitle {
+          margin-top: 135px;
+          @include font-size(86px);
+        }
+
+        .comingsoon__divider {
+
+        }
+
+        .comingsoon__offer {
+
+        }
+
+        .comingsoon__desc {
+          @include font-size(31px);
+        }
+
+        .comingsoon__newsletter {
+          margin-top: 78px;
+          @include font-size(31px);
+
+          .comingsoon__formlabel {
+
+          }
+
+          .comingsoon__forminput {
+            padding: 15px;
+          }
+
+          .comingsoon__formsubmit {
+            padding: 20px 60px;
+
+            &:hover {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comingsoon__footer {
+
+    .comingsoon__footer-img {
+
+    }
+  }
+}
