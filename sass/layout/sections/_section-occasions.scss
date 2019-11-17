@@ -1,0 +1,102 @@
+.occasions-section {
+  margin-bottom: 55px;
+  text-align: center;
+
+  .occasions__heading {
+
+    .occasions__title {
+      line-height: 1;
+      margin: .6em 0 .25em 0;
+      @include font-size(47px);
+    }
+
+    .occasions__subtitle {
+      display: block;
+      text-transform: uppercase;
+      font-family: $bookantiqua-bold;
+      @include font-size(19px);
+    }
+
+    .occasions__desc {
+      display: block;
+      margin-bottom: 44px;
+      line-height: 1;
+      @include font-size(19px);
+    }
+  }
+
+  .occasions__container {
+    @include clearfix;
+
+    .occasions__item {
+      position: relative;
+      float: right;
+      width: calc( (100% - 16px) / 4 );
+      margin: 2px;
+      overflow: hidden;
+
+      &:hover {
+
+        .occasions__link {
+  
+          .occasions__bg {
+            @include transform(scale(1.04));
+          }
+
+          .occasions__overlay {
+            opacity: .7;
+          }
+    
+          .occasions__caption {
+
+          }
+        }
+      }
+
+      .occasions__link {
+        line-height: 0;
+        display: block;
+
+        .occasions__bg {
+          @include transition(transform .3s ease);
+        }
+
+        .occasions__overlay {
+          position: absolute;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $blue;
+          opacity: 0;
+          @include transition(opacity .3s ease);
+        }
+  
+        .occasions__caption {
+          position: absolute;
+          line-height: 1.5;
+          top: 50%;
+          left: 0;
+          right: 0;
+          @include transform(translateY(-50%));
+          line-height: 1;
+          @include font-size(42px);
+          color: $white;
+
+          &::after {
+            content: '';
+            position: absolute;
+            margin: auto;
+            left: -100%;
+            right: -100%;
+            bottom: -3px;
+            width: 118px;
+            height: 1px;
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
