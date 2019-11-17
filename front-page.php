@@ -12,6 +12,10 @@
 
   get_template_part( 'template-parts/sections/section', 'hero-slider' );
 
+  get_template_part( 'template-parts/sections/section', 'occasions' );
+
+  get_template_part( 'template-parts/sections/section', 'benefits' );
+
   get_sidebar();
 
   get_footer();
