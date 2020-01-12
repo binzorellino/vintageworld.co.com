@@ -1,0 +1,47 @@
+.instagram-section {
+  padding: 30px 0 50px;
+
+  .instagram__title {
+    text-align: center;
+    margin: 0px 0 28px 0;
+    @include font-size(24px);
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .instagram-section {
+    padding: 20px 0;
+  
+    .instagram__title {
+
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .instagram-section {
+    padding: 25px 0;
+  
+    .instagram__title {
+
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .instagram-section {
+  
+    .instagram__title {
+
+    }
+  }
+}
