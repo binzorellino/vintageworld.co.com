@@ -45,7 +45,7 @@
   define( 'DISABLE_JSON', TRUE );
   define( 'DISABLE_OEMBED', TRUE );
   define( 'DISABLE_RSS', TRUE );
-  define( 'DISABLE_SEARCH', TRUE );
+  define( 'DISABLE_SEARCH', FALSE );
   define( 'DISABLE_UPDATE_WP', FALSE );
 
   define( 'ENABLE_CUSTOM_POST_TYPES', TRUE );
