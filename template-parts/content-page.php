@@ -1,4 +1,3 @@
-
 <article id="page-<?php the_ID(); ?>" <?php post_class('article-text'); ?> itemscope itemtype="http://schema.org/WebPage">
 
   <header class="entry-header">
