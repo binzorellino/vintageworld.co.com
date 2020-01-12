@@ -1,4 +1,11 @@
 <?php
+$post_629 = get_post(icl_object_id( 629, 'editable-elements', false ));
+if( $post_629 ) {
+  $occasions_title = get_the_title( $post_629->ID );
+  $occasions_subtitle = get_field( 'alcim', $post_629->ID );
+}
+wp_reset_postdata();
+
 $args_occasions = array(
   'post_type'        => 'occasions',
   'no_found_rows'    => 1,
@@ -15,9 +22,8 @@ if ( $occasions ) :
     <div class="row">
       <div class="col-md-12">
         <header class="occasions__heading">
-          <h2 class="occasions__title">Special gift for special occassion</h2>
-          <span class="occasions__subtitle">CHECK OUR ROSEBOX CATEGORIES</span>
-          <span class="occasions__desc">Guaranteed Date Express Delivery Receive Your Order In 24 Hours</span>
+          <h2 class="occasions__title break-line"><?php echo $occasions_title; ?></h2>
+          <span class="occasions__subtitle break-line"><?php echo $occasions_subtitle; ?></span>
         </header>
         <div class="occasions__container">
           <?php
@@ -57,4 +63,5 @@ if ( $occasions ) :
 </section>
 <?php 
 endif;
-wp_reset_postdata(); ?>
+wp_reset_postdata();
+?>
