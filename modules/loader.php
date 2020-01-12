@@ -34,6 +34,12 @@
 
   include_once 'types/cpt-heroslider.php';
 
+  include_once 'types/cpt-occasions.php';
+
+  include_once 'types/cpt-editable-elements.php';
+
+  include_once 'types/cpt-favourites.php';
+
   include_once 'woocommerce/wc.php';
 
   include_once 'wpbreadcrumbsgenerator.php';
