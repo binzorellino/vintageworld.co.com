@@ -1,0 +1,257 @@
+.about-products-section {
+  overflow-x: hidden;
+  max-width: 2000px;
+  margin: 60px auto 30px;
+
+  .about-products__conatiner {
+    @include clearfix;
+
+    .about-products__img-wrap {
+      position: relative;
+      z-index: 1;
+      float: left;
+      width: 47%;
+      line-height: 0;
+      background-size: cover;
+      background-position: center;
+
+      .about-products__img {
+
+      }
+    }
+
+    .about-products__text-wrap {
+      position: relative;
+      z-index: 0;
+      float: left;
+      width: 53%;
+      padding: 0 15px 0 36px;
+
+      .about-products__heading {
+
+        .about-products__title {
+          margin: 1em 0 .7em 0;
+          font-weight: 600;
+          line-height: 1;
+          @include font-size(47px);
+        }
+      }
+
+      .about-products__content-wrap {
+        position: relative;
+        padding: 16px 0 58px;
+        background-color: $pink-2;
+        line-height: 1.2;
+        @include font-size(27px);
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 100vw;
+          top: 0;
+          background-color: inherit;
+        }
+
+        &::before {
+          right: 100%;
+        }
+
+        &::after {
+          left: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .about-products-section {
+  
+    .about-products__conatiner {
+  
+      .about-products__img-wrap {
+        width: 100%;
+  
+        .about-products__img {
+
+        }
+      }
+  
+      .about-products__text-wrap {
+        width: 100%;
+        padding: 0;
+  
+        .about-products__heading {
+          padding: 20px 0 15px;
+          text-align: center;
+  
+          .about-products__title {
+            margin: .4em 0;
+            @include font-size(27px);
+          }
+        }
+  
+        .about-products__content-wrap {
+          padding: 5px 0 20px;
+          @include font-size(17px);
+  
+          &::before,
+          &::after {
+
+          }
+  
+          &::before {
+
+          }
+  
+          &::after {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+  .about-products-section {
+  
+    .about-products__conatiner {
+  
+      .about-products__img-wrap {
+        width: 47%;
+        padding-bottom: 100px;
+  
+        .about-products__img {
+          opacity: 0;
+        }
+      }
+  
+      .about-products__text-wrap {
+        width: 53%;
+        padding-left: 20px;
+  
+        .about-products__heading {
+          padding: 5px 0;
+  
+          .about-products__title {
+
+          }
+        }
+  
+        .about-products__content-wrap {
+
+  
+          &::before,
+          &::after {
+
+          }
+  
+          &::before {
+
+          }
+  
+          &::after {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .about-products-section {
+  
+    .about-products__conatiner {
+  
+      .about-products__img-wrap {
+        padding-bottom: 100px;
+  
+        .about-products__img {
+          opacity: 0;
+        }
+      }
+  
+      .about-products__text-wrap {
+        padding: 0 0 0 20px;
+  
+        .about-products__heading {
+  
+          .about-products__title {
+            margin: .4em 0;
+            @include font-size(36px);
+          }
+        }
+  
+        .about-products__content-wrap {
+          padding: 5px 0 10px;
+          @include font-size(21px);
+  
+          &::before,
+          &::after {
+
+          }
+  
+          &::before {
+
+          }
+  
+          &::after {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .about-products-section {
+  
+    .about-products__conatiner {
+  
+      .about-products__img-wrap {
+  
+        .about-products__img {
+  
+        }
+      }
+  
+      .about-products__text-wrap {
+  
+        .about-products__heading {
+  
+          .about-products__title {
+            @include font-size(36px);
+          }
+        }
+  
+        .about-products__content-wrap {
+          @include font-size(21px);
+  
+          &::before,
+          &::after {
+
+          }
+  
+          &::before {
+
+          }
+  
+          &::after {
+
+          }
+        }
+      }
+    }
+  }
+}
