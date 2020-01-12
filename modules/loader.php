@@ -33,3 +33,5 @@
   include_once 'shortcodes.php';
 
   include_once 'types/cpt-heroslider.php';
+
+  include_once 'woocommerce/wc.php';
