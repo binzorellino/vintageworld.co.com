@@ -1,5 +1,5 @@
 .site-header {
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 
   .site-header__top {
     text-align: center;
@@ -13,19 +13,49 @@
     }
   }
 
+  .site-header__middle {
+    display: none;
+
+    .site-header__search {
+      margin: 20px 0;
+
+      .site-header__search-form {
+        width: 600px;
+        max-width: 100%;
+        margin: 0 auto;
+
+        .site-header__search-field {
+          vertical-align: top;
+          width: calc(100% - 55px);
+        }
+  
+        .site-header__search-button {
+          vertical-align: top;
+          width: 50px;
+          padding: 11px;
+          font-family: $websymbol;
+        }
+      }
+    }
+  }
+
   .site-header__bottom {
     text-align: center;
 
     .site-header__logo {
+      overflow: auto;
       
       .site-header__logo-link {
         display: block;
         width: 301px;
         height: 89px;
-        margin: 20px auto 10px;
+        margin: 20px auto 5px;
+        background-size: contain;
+        background-repeat: no-repeat;
         background-image: url('images/header-logo_301x89.png');
 
         .site-header__logo-title {
+          margin: 0;
           text-indent: -99999px;
         }
       }
@@ -33,6 +63,15 @@
 
     .site-header__menu-container {
       
+      // --> sass/components/_navigations.scss
+    }
+
+    .site-header__languages-wrapper {
+      position: absolute;
+      left: 50px;
+      top: 32px;
+      
+      // --> sass/components/_navigations.scss
     }
 
     .site-header__button-search,
@@ -43,10 +82,30 @@
       display: block;
       width: 30px;
       height: 30px;
-      top: 32px;
+      top: 34px;
       right: 248px;
       background-repeat: no-repeat;
       background-position: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 150%;
+        height: 150%;
+        border-radius: 50%;
+        left: -25%;
+        top: -20%;
+        border: 2px solid transparent;
+        @include transition(border-color .3s ease);
+      }
+
+      &:hover {
+
+        &::before {
+          border-color: $pink;
+        }
+      }
     }
 
     .site-header__button-search {
@@ -80,6 +139,451 @@
         color: $white;
         background-color: $black;
         @include font-size(12px);
+      }
+    }
+
+    .site-header__hamburger-icon {
+      display: none;
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      top: 17px;
+      right: 10px;
+  
+      .hamburger-icon__bar {
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 85%;
+        background-color: $black-1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @include border-radius(8px);
+  
+        &::before,
+        &::after {
+          content: '';
+          position: relative;
+          display: block;
+          width: 100%;
+          height: inherit;
+          background-color: $black-1;
+          @include transition(all .5s ease);
+        }
+  
+        &::before {
+          margin-top: -10px;
+        }
+  
+        &::after {
+          margin-top: 17px;
+        }
+      }
+  
+      &.to-arrow {
+  
+        .hamburger-icon__bar {
+  
+          &::before {
+            transform: rotate(45deg) translate(24px,-16px);
+            width: 40%;
+          }
+  
+          &::after {
+            transform: rotate(-45deg) translate(24px,16px);
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .site-header {
+    padding-bottom: 4px;
+  
+    .site-header__top {
+      @include font-size(16px);
+      
+      .site-header__message {
+
+      }
+    }
+  
+    .site-header__middle {
+  
+      .site-header__search {
+  
+        .site-header__search-form {
+  
+          .site-header__search-field {
+            padding: 6px 15px;
+            line-height: 1.8;
+            @include font-size(15px);
+          }
+    
+          .site-header__search-button {
+            width: 40px;
+            padding: 5px 6px 6px;
+          }
+        }
+      }
+    }
+  
+    .site-header__bottom {
+  
+      .site-header__logo {
+        
+        .site-header__logo-link {
+          width: 210px;
+          height: 62px;
+          margin-top: 70px;
+  
+          .site-header__logo-title {
+
+          }
+        }
+      }
+  
+      .site-header__menu-container {
+        display: none;
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__languages-wrapper {
+        top: 20px;
+        left: 10px;
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__button-search,
+      .site-header__button-favorites,
+      .site-header__button-member,
+      .site-header__button-cart {
+        top: 20px;
+        @include transform(scale(.8));
+
+        &::before {
+
+        }
+  
+        &:hover {
+  
+          &::before {
+
+          }
+        }
+      }
+  
+      .site-header__button-search {
+        right: 215px;
+      }
+  
+      .site-header__button-favorites {
+        right: 165px;
+      }
+  
+      .site-header__button-member {
+        right: 115px;
+      }
+  
+      .site-header__button-cart {
+        right: 65px;
+
+        .site-header__button-cart-badge {
+
+        }
+      }
+
+      .site-header__hamburger-icon {
+        display: block;
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+  .site-header {
+    padding-bottom: 4px;
+  
+    .site-header__top {
+      @include font-size(16px);
+      
+      .site-header__message {
+
+      }
+    }
+  
+    .site-header__middle {
+  
+      .site-header__search {
+  
+        .site-header__search-form {
+  
+          .site-header__search-field {
+
+          }
+    
+          .site-header__search-button {
+
+          }
+        }
+      }
+    }
+  
+    .site-header__bottom {
+  
+      .site-header__logo {
+        
+        .site-header__logo-link {
+          margin-top: 11px;
+          margin-left: 0;
+  
+          .site-header__logo-title {
+
+          }
+        }
+      }
+  
+      .site-header__menu-container {
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__languages-wrapper {
+        left: 290px;
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__button-search,
+      .site-header__button-favorites,
+      .site-header__button-member,
+      .site-header__button-cart {
+
+        &::before {
+
+        }
+  
+        &:hover {
+  
+          &::before {
+
+          }
+        }
+      }
+  
+      .site-header__button-search {
+
+      }
+  
+      .site-header__button-favorites {
+
+      }
+  
+      .site-header__button-member {
+
+      }
+  
+      .site-header__button-cart {
+
+        .site-header__button-cart-badge {
+
+        }
+      }
+    }
+  }
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .site-header {
+  
+    .site-header__top {
+      
+      .site-header__message {
+
+      }
+    }
+  
+    .site-header__middle {
+  
+      .site-header__search {
+  
+        .site-header__search-form {
+  
+          .site-header__search-field {
+
+          }
+    
+          .site-header__search-button {
+
+          }
+        }
+      }
+    }
+  
+    .site-header__bottom {
+  
+      .site-header__logo {
+        
+        .site-header__logo-link {
+          width: 235px;
+          height: 70px;
+  
+          .site-header__logo-title {
+
+          }
+        }
+      }
+  
+      .site-header__menu-container {
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__languages-wrapper {
+        top: 30px;
+        left: 21px;
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__button-search,
+      .site-header__button-favorites,
+      .site-header__button-member,
+      .site-header__button-cart {
+        top: 30px;
+
+        &::before {
+
+        }
+  
+        &:hover {
+  
+          &::before {
+
+          }
+        }
+      }
+  
+      .site-header__button-search {
+        right: 180px;
+      }
+  
+      .site-header__button-favorites {
+        right: 125px;
+      }
+  
+      .site-header__button-member {
+        right: 70px;
+      }
+  
+      .site-header__button-cart {
+        right: 15px;
+        .site-header__button-cart-badge {
+
+        }
+      }
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .site-header {
+  
+    .site-header__top {
+      
+      .site-header__message {
+
+      }
+    }
+  
+    .site-header__middle {
+  
+      .site-header__search {
+  
+        .site-header__search-form {
+  
+          .site-header__search-field {
+
+          }
+    
+          .site-header__search-button {
+
+          }
+        }
+      }
+    }
+  
+    .site-header__bottom {
+  
+      .site-header__logo {
+        
+        .site-header__logo-link {
+          width: 235px;
+          height: 70px;
+  
+          .site-header__logo-title {
+
+          }
+        }
+      }
+  
+      .site-header__menu-container {
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__languages-wrapper {
+        
+        // --> sass/components/_navigations.scss
+      }
+  
+      .site-header__button-search,
+      .site-header__button-favorites,
+      .site-header__button-member,
+      .site-header__button-cart {
+
+        &::before {
+
+        }
+  
+        &:hover {
+  
+          &::before {
+
+          }
+        }
+      }
+  
+      .site-header__button-search {
+        right: 180px;
+      }
+  
+      .site-header__button-favorites {
+        right: 125px;
+      }
+  
+      .site-header__button-member {
+        right: 70px;
+      }
+  
+      .site-header__button-cart {
+        right: 15px;
+        .site-header__button-cart-badge {
+
+        }
       }
     }
   }
