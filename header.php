@@ -1,3 +1,14 @@
+<?php
+
+if( !current_user_can( 'admin' ) && !current_user_can( 'administrator' ) ) :
+
+  $url = get_site_url() . '/coming-soon';
+  wp_redirect($url);
+  exit();
+
+else :
+
+?>
 <!DOCTYPE html>
 <html lang="<?php bloginfo( 'language' ); ?>">
 
@@ -117,3 +128,6 @@
     </div>
   </div>
 </header>
+<?php
+endif;
+?>
