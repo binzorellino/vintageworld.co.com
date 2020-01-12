@@ -1,0 +1,272 @@
+.subscribe-section {
+  padding: 50px 0;
+
+  .subscribe__heading {
+    text-align: center;
+    padding-bottom: 20px;
+
+    .subscribe__title {
+      margin: 0 0 6px;
+      line-height: 1.1;
+      @include font-size(49px);
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 52%;
+        margin: 10px auto 0;
+        background-color: $black;
+      }
+    }
+
+    .subscribe__subtitle {
+      @include font-size(19px);
+    }
+  }
+
+  .subscribe__content {
+    padding-top: 20px;
+    @include clearfix;
+
+    .subscribe__form {
+      float: left;
+      width: (100% / 12 * 5);
+      padding-right: 5%;
+
+      .subscribe__label {
+        margin: 25px 0px 10px 17px;
+        display: inline-block;
+      }
+
+      .subscribe__field {
+        width: 100%;
+      }
+
+      .subscribe__submit {
+        float: right;
+        margin-top: 4px;
+        @include font-size(21px);
+      }
+    }
+
+    .subscribe__desc {
+      float: left;
+      width: (100% / 12 * 7);
+      line-height: 1.2;
+      @include font-size(27px);
+
+      p {
+        width: 610px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .subscribe-section {
+    padding: 10px 0 35px;
+  
+    .subscribe__heading {
+      padding-bottom: 5px;
+  
+      .subscribe__title {
+        @include font-size(26px);
+  
+        &::after {
+
+        }
+      }
+  
+      .subscribe__subtitle {
+        @include font-size(15px);
+      }
+    }
+  
+    .subscribe__content {
+      padding-top: 10px;
+  
+      .subscribe__form {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+        @include font-size(15px);
+  
+        .subscribe__label {
+          display: block;
+          margin: 0;
+
+        }
+  
+        .subscribe__field {
+          width: 215px;
+          max-width: 100%;
+        }
+  
+        .subscribe__submit {
+          float: none;
+          margin-top: 7px;
+          @include font-size(16px);
+        }
+      }
+  
+      .subscribe__desc {
+        width: 100%;
+        padding: 20px 15px 0;
+        @include font-size(16px);
+  
+        p {
+
+        }
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+  .subscribe-section {
+  
+    .subscribe__heading {
+  
+      .subscribe__title {
+  
+        &::after {
+
+        }
+      }
+  
+      .subscribe__subtitle {
+
+      }
+    }
+  
+    .subscribe__content {
+  
+      .subscribe__form {
+  
+        .subscribe__label {
+
+        }
+  
+        .subscribe__field {
+          width: 280px;
+        }
+  
+        .subscribe__submit {
+
+        }
+      }
+  
+      .subscribe__desc {
+  
+        p {
+
+        }
+      }
+    }
+  }
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .subscribe-section {
+  
+    .subscribe__heading {
+  
+      .subscribe__title {
+        @include font-size(33px);
+  
+        &::after {
+
+        }
+      }
+  
+      .subscribe__subtitle {
+
+      }
+    }
+  
+    .subscribe__content {
+  
+      .subscribe__form {
+        padding-right: 1%;
+  
+        .subscribe__label {
+          margin-top: 0;
+          margin-bottom: 5px;
+        }
+  
+        .subscribe__field {
+
+        }
+  
+        .subscribe__submit {
+
+        }
+      }
+  
+      .subscribe__desc {
+        padding: 0 15px;
+        @include font-size(20px);
+  
+        p {
+
+        }
+      }
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .subscribe-section {
+  
+    .subscribe__heading {
+  
+      .subscribe__title {
+        @include font-size(42px);
+  
+        &::after {
+
+        }
+      }
+  
+      .subscribe__subtitle {
+
+      }
+    }
+  
+    .subscribe__content {
+  
+      .subscribe__form {
+        padding-right: 3%;
+  
+        .subscribe__label {
+          margin-top: 5px;
+        }
+  
+        .subscribe__field {
+
+        }
+  
+        .subscribe__submit {
+
+        }
+      }
+  
+      .subscribe__desc {
+        padding: 0 15px;
+        @include font-size(24px);
+  
+        p {
+
+        }
+      }
+    }
+  }
+}
