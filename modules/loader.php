@@ -35,3 +35,5 @@
   include_once 'types/cpt-heroslider.php';
 
   include_once 'woocommerce/wc.php';
+
+  include_once 'wpbreadcrumbsgenerator.php';
