@@ -1,0 +1,84 @@
+input {
+
+  &[type="text"],
+  &[type="url"],
+  &[type="number"],
+  &[type="password"],
+  &[type="tel"],
+  &[type="email"],
+  &[type="search"],
+  &[type="range"],
+  &[type="date"],
+  &[type="month"],
+  &[type="time"],
+  &[type="week"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    padding: 11px 17px;
+    border: 1px solid $blue;
+  }
+
+  &[type="submit"] {
+    cursor: pointer;
+    padding: 11px 55px;
+    background-color: $black;
+    color: $white;
+    @include transition(background-color .3s ease);
+
+    &:hover {
+      background-color: $pink;
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  input {
+
+    &[type="text"],
+    &[type="url"],
+    &[type="number"],
+    &[type="password"],
+    &[type="tel"],
+    &[type="email"],
+    &[type="search"],
+    &[type="range"],
+    &[type="date"],
+    &[type="month"],
+    &[type="time"],
+    &[type="week"],
+    &[type="datetime"],
+    &[type="datetime-local"],
+    &[type="submit"] {
+      padding: 5px 15px;
+    }
+  
+    &[type="submit"] {
+      padding: 5px 25px;
+  
+      &:hover {
+
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+
+}
