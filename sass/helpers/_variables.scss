@@ -19,7 +19,7 @@ $bookantiqua-bold:           'BookAntiqua-Bold';
 $websymbol:                  'websymbols-regular-webfont';
 
 // Set font family list
-$font-family-list:           $bookantiqua $bookantiqua-bold;
+$font-family-list:           $bookantiqua $bookantiqua-bold $websymbol;
 
 // Set Base font family
 $base-font-family:           $bookantiqua;
@@ -32,8 +32,8 @@ $black-1:                    #010101;
 
 $blue:                       #1c2141;
 
-$gray:                       #c8c6c6;
-$gray:                       #848383;
+$gray:                       #c4c2c2;
+$gray-1:                     #848383;
 
 $pink:                       #dc9b9b;
 $pink-1:                     #dc7c7c;
