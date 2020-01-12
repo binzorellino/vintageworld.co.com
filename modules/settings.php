@@ -52,7 +52,7 @@
   define( 'ENABLE_CUSTOM_TAXONOMY', TRUE );
   define( 'ENABLE_CUSTOM_POST_TYPES_COLUMNS', TRUE );
 
-  define( 'USE_EDITOR_STYLE', FALSE );
+  define( 'USE_EDITOR_STYLE', TRUE );
 
   /**
    * Használat:

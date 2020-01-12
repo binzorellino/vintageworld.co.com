@@ -28,4 +28,8 @@
 
   include_once 'extra-options.php';
 
+  include_once 'tmce-editor.php';
+
+  include_once 'shortcodes.php';
+
   include_once 'types/cpt-heroslider.php';
