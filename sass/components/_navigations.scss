@@ -19,7 +19,7 @@
 
         &::after {
           content: '';
-          margin: 10px auto 0;
+          margin: 4px auto 0;
           display: block;
           height: 1px;
           width: 0;
@@ -36,8 +36,226 @@
           color: $pink;
 
           &::after {
-            width: calc(100% - 6px);
+            width: calc(100% - 11px);
           }
+        }
+      }
+    }
+  }
+}
+
+.site-header__languages-menu {
+  list-style: none;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 0;
+
+  .site-header__languages-item {
+    display: inline-block;
+
+    .site-header__languages-link,
+    .site-header__languages-current {
+      padding: 10px 2px;
+      margin-right: 10px;
+      position: relative;
+      color: $black-1;
+    }
+
+    .site-header__languages-link {
+      @include transition(color .3s ease);
+
+      &:hover {
+        color: $pink;
+      }
+    }
+
+    .site-header__languages-current {
+      cursor: default;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        bottom: 7px;
+        left: 0;
+        background-color: $pink;
+      }
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  [class^="menu-"][class$="-container"] {
+
+    #fejlec-menu {
+  
+      .menu-item {
+  
+        a {
+  
+          &::after {
+
+          }
+        }
+  
+        &:hover,
+        &.current-menu-item,
+        &.current_page_item {
+  
+          a {
+  
+            &::after {
+
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .site-header__languages-menu {
+  
+    .site-header__languages-item {
+  
+      .site-header__languages-link,
+      .site-header__languages-current {
+        @include font-size(17px);
+      }
+  
+      .site-header__languages-link {
+  
+        &:hover {
+
+        }
+      }
+  
+      .site-header__languages-current {
+  
+        &::after {
+
+        }
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  [class^="menu-"][class$="-container"] {
+
+    #fejlec-menu {
+  
+      .menu-item {
+  
+        a {
+          @include font-size(16px);
+  
+          &::after {
+
+          }
+        }
+  
+        &:hover,
+        &.current-menu-item,
+        &.current_page_item {
+  
+          a {
+  
+            &::after {
+
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .site-header__languages-menu {
+  
+    .site-header__languages-item {
+  
+      .site-header__languages-link,
+      .site-header__languages-current {
+
+      }
+  
+      .site-header__languages-link {
+  
+        &:hover {
+
+        }
+      }
+  
+      .site-header__languages-current {
+  
+        &::after {
+
+        }
+      }
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  [class^="menu-"][class$="-container"] {
+
+    #fejlec-menu {
+  
+      .menu-item {
+  
+        a {
+          @include font-size(19px);
+  
+          &::after {
+
+          }
+        }
+  
+        &:hover,
+        &.current-menu-item,
+        &.current_page_item {
+  
+          a {
+  
+            &::after {
+
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .site-header__languages-menu {
+  
+    .site-header__languages-item {
+  
+      .site-header__languages-link,
+      .site-header__languages-current {
+
+      }
+  
+      .site-header__languages-link {
+  
+        &:hover {
+
+        }
+      }
+  
+      .site-header__languages-current {
+  
+        &::after {
+
         }
       }
     }
