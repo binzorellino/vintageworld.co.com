@@ -6,7 +6,7 @@ $heroSliderArgs = array(
   'order'            => 'ASC',
   'post_type'        => 'heroslider',
   'post_status'      => 'publish',
-  'suppress_filters' => true,
+  'suppress_filters' => false,
   'fields'           => '',
 );
 global $post;
@@ -23,7 +23,7 @@ if ( have_posts() ) : ?>
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <p class="heroslider__text"><?php the_field( 'slide_szoveg', $post->ID ); ?></p>
+              <p class="heroslider__text break-line"><?php the_field( 'slide_szoveg', $post->ID ); ?></p>
             </div>
           </div>
         </div>
@@ -33,8 +33,8 @@ if ( have_posts() ) : ?>
     endforeach; 
     wp_reset_postdata();?>
   </div>
-  <div class="heroslider_bottom">
-    <span class="heroslider_bottom-text"><?php _e('Roses that lasts forever', TEXTDOMAIN) ?></span>
+  <div class="heroslider__bottom">
+    <span class="heroslider__bottom-text"><?php _e('Roses that lasts forever', 'vintageworld') ?></span>
   </div>
 </section>
 <?php endif; ?>
