@@ -21,8 +21,8 @@ if ( $benefits ) :
           ?>
           <div class="benefits__item">
             <img class="benefits__thumb" src="<?php the_field( 'elony_-_ikon', $benefit->ID ); ?>" />
-            <h2 class="benefits__title"><?php echo get_the_title( $benefit->ID ); ?></h2>
-            <p class="benefits__desc"><?php the_field( 'elony_-_leiras', $benefit->ID ); ?></p>
+            <h2 class="benefits__title break-line"><?php echo get_the_title( $benefit->ID ); ?></h2>
+            <p class="benefits__desc break-line"><?php the_field( 'elony_-_leiras', $benefit->ID ); ?></p>
           </div>
           <?php
           endforeach;
