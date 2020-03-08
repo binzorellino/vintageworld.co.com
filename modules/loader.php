@@ -40,6 +40,10 @@
 
   include_once 'types/cpt-favourites.php';
 
+  include_once 'types/ct-product-occasions.php';
+
+  include_once 'types/ct-product-collections.php';
+
   include_once 'woocommerce/wc.php';
 
   include_once 'wpbreadcrumbsgenerator.php';
