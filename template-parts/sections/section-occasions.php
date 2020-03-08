@@ -40,9 +40,9 @@ if ( $occasions ) :
             }
           } else {
             if ( $i < 2 ) {
-              $bg_resized = aq_resize( $bg_link, 306, 696, true, true, true );
+              $bg_resized = aq_resize( $bg_link, 306, 616, true, true, true );
             } else {
-              $bg_resized = aq_resize( $bg_link, 306, 346, true, true, true );
+              $bg_resized = aq_resize( $bg_link, 306, 306, true, true, true );
             }
           }
           ?>
