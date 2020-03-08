@@ -14,32 +14,32 @@
 
   if ( USE_EDITOR_STYLE == TRUE ) {
 
-    add_action( 'after_setup_theme', 'kvbf_add_editor_styles' );
-    function kvbf_add_editor_styles() {
+    add_action( 'after_setup_theme', 'custom_add_editor_styles' );
+    function custom_add_editor_styles() {
       add_editor_style( 'editor-style.css' );
     }
 
   }
 
 
-  add_action( 'admin_head', 'kvbf_add_shortcodes' );
-  function kvbf_add_shortcodes() {
+  add_action( 'admin_head', 'custom_add_shortcodes' );
+  function custom_add_shortcodes() {
     if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) return;
     if ( get_user_option('rich_editing') == 'true') {
-      add_filter( 'mce_external_plugins', 'kvbf_add_shortcode_tinymce_plugin', 20 );
-      add_filter( 'mce_buttons', 'kvbf_register_shortcode_button',20 );
+      add_filter( 'mce_external_plugins', 'custom_add_shortcode_tinymce_plugin', 20 );
+      add_filter( 'mce_buttons', 'custom_register_shortcode_button',20 );
     }
   }
 
 
-  function kvbf_register_shortcode_button( $buttons ) {
-    array_push($buttons, "|", "kvbf_shortcodes_button");
+  function custom_register_shortcode_button( $buttons ) {
+    array_push($buttons, "|", "custom_shortcodes_button");
     return $buttons;
   }
 
 
-  function kvbf_add_shortcode_tinymce_plugin( $plugin_array ) {
-    $plugin_array['KvbfShortcodes'] = get_template_directory_uri() .'/modules/tinymce/shortcode_mce.js';
+  function custom_add_shortcode_tinymce_plugin( $plugin_array ) {
+    $plugin_array['CustomShortcodes'] = get_template_directory_uri() .'/modules/tinymce/shortcode_mce.js';
     return $plugin_array;
   }
 

@@ -17,8 +17,8 @@
    *
    * @usage [googlemaps src="https://www.google.com...."]
    */
-  add_shortcode('piktogram-rovid-leirassal', 'kvbf_embend_picwithtext');
-  function kvbf_embend_picwithtext( $atts ) {
+  add_shortcode('piktogram-rovid-leirassal', 'custom_embend_picwithtext');
+  function custom_embend_picwithtext( $atts ) {
     $atts = shortcode_atts(array('kep' => '', 'leiras' => ''), $atts);
     return '<div class="picwithext__container"><div class="picwithext__pic">' . $atts['kep'] . '</div><div class="picwithext__text">' . $atts['leiras'] . '</div></div>';
   }
@@ -31,8 +31,8 @@
    *
    * @usage [googlemaps src="https://www.google.com...."]
    */
-  add_shortcode('googlemaps', 'kvbf_embend_googlemaps');
-  function kvbf_embend_googlemaps( $atts ) {
+  add_shortcode('googlemaps', 'custom_embend_googlemaps');
+  function custom_embend_googlemaps( $atts ) {
     $atts = shortcode_atts(array('src' => ''), $atts);
     return '<div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="' . $atts['src'] . '" width="500" height="500" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div></div>';
   }
@@ -45,8 +45,8 @@
    *
    * @usage [youtube videoid="xxxxxxxxxx"]
    */
-  add_shortcode('youtube', 'kvbf_embend_youtube');
-  function kvbf_embend_youtube( $atts ) {
+  add_shortcode('youtube', 'custom_embend_youtube');
+  function custom_embend_youtube( $atts ) {
     $atts = shortcode_atts(array('videoid' => ''), $atts);
     return '<div class="embed-container"><iframe src="http://www.youtube.com/embed/' . $atts['videoid'] . '" frameborder="0" allowfullscreen></iframe></div>';
   }
@@ -56,8 +56,8 @@
    * Button shortcode
    * @usage [button link="http://valami.hu" szoveg="Gomb szövege" ujoldal="igen/nem"]
    */
-  add_shortcode( 'button', 'kvbf_button_shortcode' );
-  function kvbf_button_shortcode( $attrs ) {
+  add_shortcode( 'button', 'custom_button_shortcode' );
+  function custom_button_shortcode( $attrs ) {
     $button_attrs = shortcode_atts( array( 'link' => '', 'szoveg' => '', 'ujoldal' => 'igen' ), $attrs );
     if ( $button_attrs['ujoldal'] == 'igen' ) { $new_window = ' target="_blank"'; } else { $new_window = ''; }
     return '<a href="' . $button_attrs['link'] . '"' . $new_window . ' class="btn btn-inlineblock btn-rounded btn-bordered btn-green">' . $button_attrs['szoveg'] . ' &raquo;</a>';

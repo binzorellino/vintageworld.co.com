@@ -8,8 +8,8 @@
 
   add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
-  add_action( 'wp_enqueue_scripts', 'kvbf_woocommerce_scripts' );
-  function kvbf_woocommerce_scripts() {
+  add_action( 'wp_enqueue_scripts', 'custom_woocommerce_scripts' );
+  function custom_woocommerce_scripts() {
     wp_enqueue_script( TEXTDOMAIN.'-wc-main', THEME_URL . '/modules/woocommerce/assets/js/main.wc.min.js', array(), '', false );
   }
 
@@ -86,7 +86,7 @@
 
   add_filter('password_change_email', 'wpse207879_change_password_mail_message', 10, 3);
   function wpse207879_change_password_mail_message($pass_change_mail, $user, $userdata) {
-    $new_message_txt = __( '<h3>Kedves Felhasználónk!</h3><br/><p>Ezzel az emlékeztetővel is felhívjuk a figyelmét arra, hogy az AKM METAL honlapon a jelszavát kérésének megfelelően módosítottuk.</p><p>Amennyiben ezt a módosítást nem szerette volna, kérjük lépjen kapcsolatba a honlap üzemeltetőjével az info@seachili.com címen.</p><br/><p>Jelen email címzettje: ###EMAIL###</p><p><strong>Köszönettel:</strong><br/>A Seachili csapata</p>', 'seachili' );
+    $new_message_txt = __( '<h3>Kedves Felhasználónk!</h3><br/><p>Ezzel az emlékeztetővel is felhívjuk a figyelmét arra, hogy az Vintage World honlapon a jelszavát kérésének megfelelően módosítottuk.</p><p>Amennyiben ezt a módosítást nem szerette volna, kérjük lépjen kapcsolatba a honlap üzemeltetőjével az hello@vintageworld.col.com címen.</p><br/><p>Jelen email címzettje: ###EMAIL###</p><p><strong>Köszönettel:</strong><br/>A Vintage World csapata</p>', 'vintageworld' );
     $pass_change_mail[ 'message' ] = $new_message_txt;
     return $pass_change_mail;
   }

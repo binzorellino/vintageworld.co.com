@@ -1,6 +1,6 @@
 (function() {
-  tinymce.PluginManager.add('KvbfShortcodes', function( editor, url ) {
-    editor.addButton( 'kvbf_shortcodes_button', {
+  tinymce.PluginManager.add('CustomShortcodes', function( editor, url ) {
+    editor.addButton( 'custom_shortcodes_button', {
       text: 'Shortcode-ok',
       icon: false,
 			type: 'menubutton',

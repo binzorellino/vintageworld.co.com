@@ -9,13 +9,13 @@
   add_image_size( 'content-thumb', 1000 );
   add_image_size( 'optimized', 1920, 1080 );
 
-  function kvbf_custom_sizes( $sizes ) {
+  function custom_thumb_sizes( $sizes ) {
     return array_merge( $sizes, array(
       'content-thumb' => __( 'Tartalomba szánt méret' ),
       'base-thumb'    => __( 'Bélyegkép méret' )
     ) );
   }
-  add_filter( 'image_size_names_choose', 'kvbf_custom_sizes' );
+  add_filter( 'image_size_names_choose', 'custom_thumb_sizes' );
 
   function replace_uploaded_image($image_data) {
     if (!isset($image_data['sizes']['optimized'])) return $image_data;
@@ -76,8 +76,8 @@
       $wp_admin_bar->remove_node( 'view-site' );
     }, 31 );
 
-    add_action('admin_footer','kvbf_posts_status_color');
-    function kvbf_posts_status_color(){
+    add_action('admin_footer','customize_posts_status_color');
+    function customize_posts_status_color(){
     ?>
       <style>
       .status-draft{background: #FCE3F2!important;}
