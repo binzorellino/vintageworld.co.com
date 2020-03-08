@@ -8,6 +8,7 @@
     .subscribe__title {
       margin: 0 0 6px;
       line-height: 1.1;
+      letter-spacing: -1px;
       @include font-size(49px);
 
       &::after {
