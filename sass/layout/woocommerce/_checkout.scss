@@ -1,0 +1,135 @@
+.woocommerce {
+
+  .woocommerce-checkout {
+
+    #customer_details {
+
+      .col-1 {
+
+        .woocommerce-billing-fields {
+
+          h3 {
+            @include font-size(40px);
+          }
+        }
+      }
+    }
+
+    #order_review_heading {
+      @include font-size(40px);
+    }
+
+    #order_review {
+
+      .woocommerce-checkout-review-order-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+
+          tr {
+
+            th {
+              text-align: left;
+              padding: 20px;
+              border-bottom: solid 1px $gray-3;
+            }
+          }
+        }
+
+        tbody {
+
+          tr {
+
+            td {
+              padding: 20px;
+              border-bottom: solid 1px $gray-3;
+            }
+          }
+        }
+
+        tfoot {
+
+          tr {
+
+            th {
+              text-align: left;
+              padding: 20px;
+              border-bottom: solid 1px $gray-3;
+            }
+
+            td {
+              padding: 20px;
+              border-bottom: solid 1px $gray-3;
+
+              ul {
+                @include mpnull;
+
+                li {
+
+                  list-style: none;
+                }
+              }
+            }
+
+            &:first-child {
+
+              th,
+              td {
+                margin-top: 25px;
+                border-top: double 15px $gray-3;
+              }
+            }
+          }
+        }
+      }
+
+      #payment {
+        margin: 40px 0;
+
+        .wc_payment_methods {
+          margin: 0;
+          border-top: double 15px $gray-3;
+          padding: 35px 0 0;
+
+          .wc_payment_method {
+            list-style: none;
+            padding-bottom: 20px;
+            border-bottom: double 1px $gray-3;
+
+            &:last-child {
+              padding-bottom: 0;
+              border-bottom: none;
+            }
+
+            label {
+              vertical-align: middle;
+
+              a {
+                vertical-align: middle;
+                text-decoration: underline;
+                @include transition(color .3s);
+
+                &:hover {
+                  color: $pink;
+                }
+              }
+
+              img {
+                vertical-align: middle;
+                margin: 0 15px;
+              }
+            }
+
+            .payment_box {
+
+              p {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

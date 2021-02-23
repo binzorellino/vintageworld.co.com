@@ -38,7 +38,7 @@
           margin-left: 2%;
           float: right;
           line-height: 0;
-  
+
           .favourites__cover {
             width: 100%;
           }
@@ -52,7 +52,7 @@
             position: relative;
             height: 100%;
             @include clearfix;
-    
+
             .favourites__product {
               width: 48%;
               height: 48%;
@@ -81,7 +81,7 @@
                 right: 0;
                 margin-bottom: 2%;
               }
-    
+
               .favourites__thumb-wrapper {
                 display: block;
                 line-height: 0;
@@ -99,7 +99,7 @@
                     @include transform(scale(1.05));
                   }
                 }
-    
+
                 .favourites__thumb {
                   display: block;
                   line-height: 0;
@@ -113,7 +113,25 @@
                   @include transition(transform .5s ease)
                 }
               }
-    
+
+              .procuct_card__cart-message {
+                position: absolute;
+                display: none;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                text-align: center;
+                color: $white;
+                background-color: rgba($pink-1, .75);
+                line-height: 3;
+                @include font-size(14px);
+
+                &.already-in {
+                  background-color: rgba($black-1, .65);
+                }
+              }
+
               .favourites__product-info {
                 position: absolute;
                 bottom: 0;
@@ -121,20 +139,20 @@
                 right: 0;
                 background-color: $white;
                 @include clearfix;
-    
+
                 .favourites__product-text {
                   padding-top: 4px;
                   padding-right: 5px;
                   float: left;
                   max-width: calc(100% - 15px);
-    
+
                   .favourites__collection {
                     margin: 0;
                     text-transform: uppercase;
                     line-height: 1.6;
                     @include font-size(10px);
                   }
-    
+
                   .favourites__title {
                     display: block;
                     color: $black;
@@ -146,21 +164,48 @@
                     }
                   }
                 }
-    
+
                 .favourites__cart-wrapper {
                   float: right;
-    
+
                   .favourites__cart {
                     display:block;
                     width:15px;
                     height:20px;
                     margin-top: 5px;
-                    background-image: url('data:image/png;base64,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');
-                    background-size: contain;
-                    background-repeat: no-repeat;
                     cursor: pointer;
+
+                    svg {
+
+                      g {
+                        @include transition(all .3s);
+                      }
+
+                      &:hover {
+
+                        g {
+                          fill: $pink-1;
+                        }
+                      }
+                    }
                   }
                 }
+              }
+
+              .add-to-cart-loader {
+                position: absolute;
+                display: none;
+                width: auto;
+                height: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $ajax-loader-bg-color;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 50px;
+                background-image: url('images/ajax-loader.gif');
               }
             }
           }
@@ -181,22 +226,22 @@
       .favourites__title {
         @include font-size(33px);
       }
-  
+
       .favourites__subtitle {
         @include font-size(17px);
       }
     }
-  
+
     .favourites__container {
-  
+
       .favourites__item {
         width: 100%;
         margin-bottom: 50px;
-  
+
         &:nth-child(2n) {
           margin-left: 0;
         }
-  
+
         .favourites__item-inner {
 
           .favourites__cover-wrapper {
@@ -207,7 +252,7 @@
 
             }
           }
-  
+
           .favourites__products-container {
             width: 100%;
 
@@ -218,33 +263,33 @@
                 &:first-child {
 
                 }
-  
+
                 &:nth-child(2) {
 
                 }
-  
+
                 &:nth-child(3) {
 
                 }
-  
+
                 &:nth-child(4) {
 
                 }
-      
+
                 .favourites__thumb-wrapper {
 
                   &:hover {
-  
+
                     .favourites__thumb {
 
                     }
                   }
-      
+
                   .favourites__thumb {
 
                   }
                 }
-      
+
                 .favourites__product-info {
 
                   .favourites__product-text {
@@ -253,18 +298,18 @@
                       @include font-size(16px);
 
                     }
-      
+
                     .favourites__title {
                       @include font-size(13px);
-  
+
                       &:hover {
 
                       }
                     }
                   }
-      
+
                   .favourites__cart-wrapper {
-      
+
                     .favourites__cart {
 
                     }
@@ -288,20 +333,20 @@
       .favourites__title {
 
       }
-  
+
       .favourites__subtitle {
 
       }
     }
-  
+
     .favourites__container {
-  
+
       .favourites__item {
-  
+
         &:nth-child(2n) {
 
         }
-  
+
         .favourites__item-inner {
 
           .favourites__cover-wrapper {
@@ -312,7 +357,7 @@
 
             }
           }
-  
+
           .favourites__products-container {
             width: 48%;
 
@@ -323,33 +368,33 @@
                 &:first-child {
 
                 }
-  
+
                 &:nth-child(2) {
 
                 }
-  
+
                 &:nth-child(3) {
 
                 }
-  
+
                 &:nth-child(4) {
 
                 }
-      
+
                 .favourites__thumb-wrapper {
 
                   &:hover {
-  
+
                     .favourites__thumb {
 
                     }
                   }
-      
+
                   .favourites__thumb {
 
                   }
                 }
-      
+
                 .favourites__product-info {
 
                   .favourites__product-text {
@@ -357,17 +402,17 @@
                     .favourites__collection {
 
                     }
-      
+
                     .favourites__title {
-  
+
                       &:hover {
 
                       }
                     }
                   }
-      
+
                   .favourites__cart-wrapper {
-      
+
                     .favourites__cart {
 
                     }
@@ -391,22 +436,22 @@
       .favourites__title {
 
       }
-  
+
       .favourites__subtitle {
 
       }
     }
-  
+
     .favourites__container {
-  
+
       .favourites__item {
         width: 100%;
         margin-bottom: 50px;
-  
+
         &:nth-child(2n) {
           margin-left: 0;
         }
-  
+
         .favourites__item-inner {
 
           .favourites__cover-wrapper {
@@ -415,7 +460,7 @@
 
             }
           }
-  
+
           .favourites__products-container {
 
             .favourites__products-inner {
@@ -425,33 +470,33 @@
                 &:first-child {
 
                 }
-  
+
                 &:nth-child(2) {
 
                 }
-  
+
                 &:nth-child(3) {
 
                 }
-  
+
                 &:nth-child(4) {
 
                 }
-      
+
                 .favourites__thumb-wrapper {
 
                   &:hover {
-  
+
                     .favourites__thumb {
 
                     }
                   }
-      
+
                   .favourites__thumb {
 
                   }
                 }
-      
+
                 .favourites__product-info {
 
                   .favourites__product-text {
@@ -459,17 +504,17 @@
                     .favourites__collection {
 
                     }
-      
+
                     .favourites__title {
-  
+
                       &:hover {
 
                       }
                     }
                   }
-      
+
                   .favourites__cart-wrapper {
-      
+
                     .favourites__cart {
 
                     }
@@ -493,20 +538,20 @@
       .favourites__title {
 
       }
-  
+
       .favourites__subtitle {
 
       }
     }
-  
+
     .favourites__container {
-  
+
       .favourites__item {
-  
+
         &:nth-child(2n) {
 
         }
-  
+
         .favourites__item-inner {
 
           .favourites__cover-wrapper {
@@ -515,7 +560,7 @@
 
             }
           }
-  
+
           .favourites__products-container {
 
             .favourites__products-inner {
@@ -525,33 +570,33 @@
                 &:first-child {
 
                 }
-  
+
                 &:nth-child(2) {
 
                 }
-  
+
                 &:nth-child(3) {
 
                 }
-  
+
                 &:nth-child(4) {
 
                 }
-      
+
                 .favourites__thumb-wrapper {
 
                   &:hover {
-  
+
                     .favourites__thumb {
 
                     }
                   }
-      
+
                   .favourites__thumb {
 
                   }
                 }
-      
+
                 .favourites__product-info {
 
                   .favourites__product-text {
@@ -559,17 +604,17 @@
                     .favourites__collection {
 
                     }
-      
+
                     .favourites__title {
-  
+
                       &:hover {
 
                       }
                     }
                   }
-      
+
                   .favourites__cart-wrapper {
-      
+
                     .favourites__cart {
 
                     }

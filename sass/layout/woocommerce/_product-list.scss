@@ -1,0 +1,154 @@
+.product-list__container {
+  margin: 0;
+  padding: 0;
+  @include clearfix;
+
+  .product-list__item  {
+    display: block;
+    float: left;
+    width: 23.5%;
+    margin: 30px 2% 30px 0;
+    list-style: none;
+    text-align: center;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    .woocommerce-loop-product__link {
+      display: block;
+
+      .attachment-woocommerce_thumbnail {
+
+      }
+
+      .woocommerce-loop-product__title {
+
+      }
+
+      .price {
+        display: block;
+        margin: 20px 0;
+        @include font-size(30px);
+      }
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .product-list__container {
+
+    .product-list__item  {
+      width: 100%;
+      margin-right: 0;
+
+      &:nth-child(even) {
+
+      }
+
+      .woocommerce-loop-product__link {
+
+        .attachment-woocommerce_thumbnail {
+
+        }
+
+        .woocommerce-loop-product__title {
+
+        }
+
+        .price {
+
+        }
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+  .product-list__container {
+
+    .product-list__item  {
+      width: 49%;
+      margin-right: 2%;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+
+      .woocommerce-loop-product__link {
+
+        .attachment-woocommerce_thumbnail {
+
+        }
+
+        .woocommerce-loop-product__title {
+
+        }
+
+        .price {
+
+        }
+      }
+    }
+  }
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .product-list__container {
+
+    .product-list__item  {
+      width: 49%;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+
+      .woocommerce-loop-product__link {
+
+        .attachment-woocommerce_thumbnail {
+
+        }
+
+        .woocommerce-loop-product__title {
+
+        }
+
+        .price {
+
+        }
+      }
+    }
+  }
+}
+
+// tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .product-list__container {
+
+    .product-list__item  {
+
+      &:nth-child(4n) {
+
+      }
+
+      .woocommerce-loop-product__link {
+
+        .attachment-woocommerce_thumbnail {
+
+        }
+
+        .woocommerce-loop-product__title {
+
+        }
+
+        .price {
+
+        }
+      }
+    }
+  }
+}

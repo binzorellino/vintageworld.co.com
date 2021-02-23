@@ -17,5 +17,16 @@
 @import 'sections/section-favourites';
 @import 'sections/section-subscribe';
 @import 'sections/section-instagram';
+@import 'sections/section-prod_cats';
+@import 'sections/section-product_card';
+
+@import 'woocommerce/common';
+@import 'woocommerce/product-list';
+@import 'woocommerce/product-page';
+@import 'woocommerce/cart';
+@import 'woocommerce/checkout';
+@import 'woocommerce/account';
+
+@import 'archive-blog';
 
 @import 'footer';

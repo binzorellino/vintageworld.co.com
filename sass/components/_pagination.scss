@@ -1,0 +1,59 @@
+.woocommerce-pagination {
+  margin: 50px 0;
+
+  .page-numbers {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: center;
+    @include font-size(30px);
+
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      width: 45px;
+      height: 45px;
+
+      .page-numbers {
+
+        line-height: 39px;
+        @include transition(all .3s);
+
+        &:not(.prev):not(.next) {
+          width: 45px;
+          height: 45px;
+          display: block;
+          border: 2px solid transparent;
+
+          &:hover {
+
+          }
+
+          &:not(.current) {
+
+            &:hover {
+              color: $white;
+              background-color: $pink;
+            }
+          }
+        }
+
+        &.current {
+          color: $gray;
+          cursor: default;
+        }
+
+        &.prev,
+        &.next {
+          font-family: $websymbol;
+          @include font-size(25px);
+
+          &:hover {
+            color: $pink;
+          }
+        }
+      }
+    }
+  }
+}

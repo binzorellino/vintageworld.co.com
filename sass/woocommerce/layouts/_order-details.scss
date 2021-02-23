@@ -1,0 +1,726 @@
+.woocommerce {
+
+  .woocommerce-bacs-bank-details {
+    margin-top: 4em;
+
+    h2 {
+      margin: 0 0 15px;
+      padding: 0;
+      @include font-size(32px);
+
+    }
+
+    h3 {
+      font-weight: normal;
+      @include font-size(20px);
+
+    }
+
+  }
+
+  .woocommerce-order-details {
+    margin-top: 0;
+
+    .woocommerce-order-details__title {
+      margin: 0 0 15px;
+      padding: 0;
+      @include font-size(32px);
+
+    }
+
+    .order-again {
+      display: block;
+      margin: -2em 0 4em;
+
+      .btn {
+        margin: 0!important;
+
+      }
+
+    }
+
+  }
+
+  .woocommerce-customer-details {
+
+    .woocommerce-column__title {
+      margin: 0 0 15px;
+      padding: 0;
+      @include font-size(32px);
+
+    }
+
+    .addresses {
+
+      h3 {
+        margin-top: 0;
+
+      }
+
+    }
+
+  }
+
+  table.account-orders-table {
+    width: 100%;
+    margin-bottom: 30px;
+    border-collapse: separate;
+    border: 1px solid  $gray!important;
+    @include border-radius(10px);
+
+    thead {
+
+      th {
+        padding: 15px;
+        font-weight: normal;
+
+      }
+
+    }
+
+    thead {
+
+      tr {
+
+        th {
+          background: $gray!important;
+          color: $black-1!important;
+          text-align: center;
+
+          @include first(1) {
+            text-align: left;
+
+          }
+
+          &:nth-child(1) {
+            border-top-left-radius: 10px!important;
+
+          }
+
+          &:nth-child(3) {
+            border-top-right-radius: 10px!important;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    tbody {
+
+      tr {
+
+        td {
+          border-top: 1px solid  $gray!important;
+          color: $black-1!important;
+          text-align: center;
+
+          @include first(1) {
+            text-align: left;
+
+          }
+
+          &.product-name {
+
+            a {
+              text-decoration: none;
+
+            }
+
+            .product-quantity {
+              font-weight: normal;
+              color: $black-1!important;
+
+            }
+
+          }
+
+        }
+
+        @include last(1) {
+
+          td {
+
+            &:nth-child(1) {
+              border-bottom-left-radius: 10px!important;
+
+            }
+
+            &:nth-child(3) {
+              border-bottom-right-radius: 10px!important;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+  table.order_details {
+    width: 100%;
+    margin-bottom: 30px;
+    border-collapse: separate;
+    border: 1px solid  $gray!important;
+    @include border-radius(10px);
+
+    thead {
+
+      th {
+        padding: 15px;
+        font-weight: normal;
+
+      }
+
+    }
+
+    thead {
+
+      tr {
+
+        th {
+          background: $gray!important;
+          color: $black-1!important;
+          text-align: left;
+
+          &:nth-child(1) {
+            border-top-left-radius: 10px!important;
+            border-top-right-radius: 10px!important;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    tbody {
+
+      tr {
+
+        td {
+          border-top: 1px solid  $gray!important;
+          color: $black-1!important;
+
+          &.product-name {
+
+            a {
+              text-decoration: none;
+
+            }
+
+            .product-quantity {
+              font-weight: normal;
+              color: $black-1!important;
+
+            }
+
+          }
+
+        }
+
+        @include last(1) {
+
+          td {
+
+            &:nth-child(1) {
+              border-bottom-left-radius: 10px!important;
+              border-bottom-right-radius: 10px!important;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    tfoot {
+
+      tr {
+
+        td {
+          border-top: 1px solid  $gray!important;
+          color: $black-1!important;
+
+        }
+
+        @include last(1) {
+
+          td {
+
+            &:nth-child(1) {
+              border-bottom-left-radius: 10px!important;
+
+            }
+
+            &:nth-child(2) {
+              border-bottom-right-radius: 10px!important;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  table.customer_details {
+    width: 100%;
+    margin-bottom: 30px;
+    border-collapse: separate;
+    border: 1px solid  $gray!important;
+    @include border-radius(10px);
+
+    th,
+    td {
+      border-top: 1px solid $gray!important;
+      color: $black-1!important;
+
+
+
+    }
+
+    tr {
+
+      &:first-child {
+
+        th {
+          border-top: none!important;
+
+        }
+
+        td {
+          border-top: none!important;
+
+        }
+
+      }
+
+    }
+
+    th {
+      width: 20%;
+      text-align: left;
+      font-weight: normal;
+      padding: 15px;
+      border-right: 1px solid $gray!important;
+      background-color:lighten($gray, 5%)!important;
+
+    }
+
+    tbody {
+
+      tr {
+
+        @include first(1) {
+
+          th {
+
+            &:nth-child(1) {
+              border-top-left-radius: 10px!important;
+
+            }
+
+          }
+
+          td {
+
+            &:nth-child(2) {
+              border-top-right-radius: 10px!important;
+
+            }
+
+          }
+
+        }
+
+        @include last(1) {
+
+          th {
+
+            &:nth-child(1) {
+              border-bottom-left-radius: 10px!important;
+
+            }
+
+          }
+
+          td {
+
+            &:nth-child(2) {
+              border-bottom-right-radius: 10px!important;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Mobil álló
+@include screen($null, $sm) {
+
+  .woocommerce {
+
+    .woocommerce-order {
+      p {
+        @include font-size(14px);
+        margin-top: 0;
+
+      }
+
+    }
+
+    .woocommerce-bacs-bank-details {
+      margin-top: 4em;
+
+      h2 {
+
+        &::after {
+          content: '';
+          display: block;
+          height: 3px;
+          background-color: red;
+          width: 20%;
+
+        }
+
+      }
+
+      h3 {
+        font-weight: normal;
+        @include font-size(20px);
+
+      }
+
+    }
+
+    .woocommerce-order-details {
+      margin-top: 3em;
+
+      .with-bottom-border {
+
+        &::after {
+          content: '';
+          display: block;
+          height: 3px;
+          background-color: red;
+          width: 20%;
+
+        }
+
+      }
+
+      .order-again {
+        display: block;
+        margin: -2em 0 4em;
+
+        .btn {
+          margin: 0!important;
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-customer-details {
+
+      .addresses {
+
+        .col-6 {
+          float: none;
+          width: 100%;
+
+          &:nth-child(2) {
+            margin-top: 30px;
+
+          }
+
+        }
+
+        h3 {
+          margin-top: 0;
+
+        }
+
+        address {
+          margin-top: 15px;
+          @include font-size(14px);
+          line-height: 1.4em;
+
+        }
+
+      }
+
+    }
+
+    table.account-orders-table {
+
+      thead {
+
+        th {
+          padding: 10px;
+          font-weight: normal;
+          @include font-size(10px);
+
+        }
+
+      }
+
+      tbody {
+
+        tr {
+
+          td {
+            @include font-size(10px);
+
+            .btn {
+              padding: 5px 15px;
+              @include font-size(13px);
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    table.order_details {
+      margin-bottom: 3em;
+
+      thead {
+
+        th {
+          padding: 10px;
+          @include font-size(14px);
+          line-height: 1.2em;
+
+        }
+
+      }
+
+      tbody {
+
+        td {
+          padding: 10px;
+          @include font-size(14px);
+          line-height: 1.2em;
+
+        }
+
+      }
+
+      tfoot {
+
+        th,
+        td {
+          padding: 10px;
+          @include font-size(14px);
+          line-height: 1.2em;
+
+        }
+
+        tr {
+          background-color: $white;
+
+          &:first-child {
+
+            th {
+              border-top: none;
+
+            }
+
+            td {
+              border-top: none;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    table.customer_details {
+      margin-bottom: 3em;
+
+      th,
+      td {
+        padding: 10px;
+        @include font-size(14px);
+        line-height: 1.2em;
+
+      }
+
+      th {
+        display: block;
+        width: 100%;
+
+      }
+
+      td {
+        display: block;
+        width: 100%;
+        padding: 10px!important;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Tablet álló + mobil fekvő
+@include screen(($sm + 1), $md) {
+
+  .woocommerce-account .subpage-page-single {
+    padding: 40px 0 0;
+
+  }
+
+  .woocommerce {
+
+    .woocommerce-order-details h2,
+    .woocommerce-order-details h3 {
+      @include font-size(28px);
+
+    }
+
+    .woocommerce-bacs-bank-details {
+
+      h3 {
+        @include font-size(18px);
+
+      }
+
+    }
+
+    table.account-orders-table {
+
+      .btn {
+        padding: 8px 16px;
+        @include font-size(13px);
+
+      }
+
+      thead {
+
+        th {
+          padding: 10px;
+          @include font-size(15px);
+
+        }
+
+      }
+
+      tbody {
+
+        td {
+          padding: 10px;
+          @include font-size(14px);
+          line-height: 1.2em;
+
+        }
+
+      }
+
+    }
+
+    table.order_details {
+      @include font-size(15px);
+
+      thead {
+
+        th {
+          padding: 10px;
+          @include font-size(15px);
+
+        }
+
+      }
+
+      tbody {
+
+        td {
+          padding: 10px;
+          @include font-size(15px);
+          line-height: 1.2em;
+
+        }
+
+      }
+
+      tfoot {
+
+        th {
+          padding: 10px;
+          @include font-size(15px);
+
+        }
+
+        td {
+          line-height: 1.2em;
+
+        }
+
+      }
+
+    }
+
+    table.customer_details {
+      margin-bottom: 2em;
+
+      th,
+      td {
+        @include font-size(15px);
+
+      }
+
+
+      th,
+      td {
+        padding: 8px!important;
+
+      }
+
+    }
+
+    .woocommerce-customer-details address {
+      @include font-size(15px);
+
+    }
+
+  }
+
+}

@@ -1,0 +1,25 @@
+.woocommerce,
+.woocommerce-page {
+
+	img {
+		height: auto;
+		max-width: 100%;
+
+  }
+  
+  .col-1,
+  .col-2 {
+    width: auto;
+  }
+
+}
+
+.woocommerce-order-received {
+
+  .cart-empty,
+  .return-to-shop {
+    display: none;
+
+  }
+
+}

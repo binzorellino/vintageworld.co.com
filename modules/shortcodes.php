@@ -60,7 +60,7 @@
   function custom_button_shortcode( $attrs ) {
     $button_attrs = shortcode_atts( array( 'link' => '', 'szoveg' => '', 'ujoldal' => 'igen' ), $attrs );
     if ( $button_attrs['ujoldal'] == 'igen' ) { $new_window = ' target="_blank"'; } else { $new_window = ''; }
-    return '<a href="' . $button_attrs['link'] . '"' . $new_window . ' class="btn btn-inlineblock btn-rounded btn-bordered btn-green">' . $button_attrs['szoveg'] . ' &raquo;</a>';
+    return '<a href="' . $button_attrs['link'] . '"' . $new_window . ' class="btn btn-inlineblock btn-bordered">' . $button_attrs['szoveg'] . ' &raquo;</a>';
   }
 
 

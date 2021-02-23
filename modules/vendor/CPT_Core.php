@@ -26,15 +26,15 @@ if ( ! class_exists( 'CPT_Core' ) ) :
     public function __construct( array $cpt, $arg_overrides = array() ) {
 
       if ( ! is_array( $cpt ) ) {
-        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'kvbf' ) );
+        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'bitdev' ) );
       }
 
       if ( ! isset( $cpt[0], $cpt[1], $cpt[2] ) ) {
-        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'kvbf' ) );
+        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'bitdev' ) );
       }
 
       if ( ! is_string( $cpt[0] ) || ! is_string( $cpt[1] ) || ! is_string( $cpt[2] ) ) {
-        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'kvbf' ) );
+        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'bitdev' ) );
       }
 
       $this->singular  = $cpt[0];
@@ -65,16 +65,16 @@ if ( ! class_exists( 'CPT_Core' ) ) :
       $labels = array(
         'name'               => $this->plural,
         'singular_name'      => $this->singular,
-        'add_new'            => sprintf( __( 'Új %s létrehozása', 'kvbf' ), $this->singular ),
-        'add_new_item'       => sprintf( __( 'Új %s létrehozása', 'kvbf' ), $this->singular ),
-        'edit_item'          => sprintf( __( '%s szerkesztése', 'kvbf' ), $this->singular ),
-        'new_item'           => sprintf( __( 'Új %s létrehozása', 'kvbf' ), $this->singular ),
-        'all_items'          => sprintf( __( 'Összes %s', 'kvbf' ), $this->plural ),
-        'view_item'          => sprintf( __( '%s megtekintése', 'kvbf' ), $this->singular ),
-        'search_items'       => sprintf( __( 'Keresés a %s között', 'kvbf' ), $this->plural ),
-        'not_found'          => sprintf( __( 'Nincsenek létrehozott %s', 'kvbf' ), $this->plural ),
-        'not_found_in_trash' => sprintf( __( 'Nem található %s a lomtárban', 'kvbf' ), $this->plural ),
-        'parent_item_colon'  => isset( $this->arg_overrides['hierarchical'] ) && $this->arg_overrides['hierarchical'] ? sprintf( __( 'Szülő %s:', 'kvbf' ), $this->singular ) : null,
+        'add_new'            => sprintf( __( 'Új %s létrehozása', 'bitdev' ), $this->singular ),
+        'add_new_item'       => sprintf( __( 'Új %s létrehozása', 'bitdev' ), $this->singular ),
+        'edit_item'          => sprintf( __( '%s szerkesztése', 'bitdev' ), $this->singular ),
+        'new_item'           => sprintf( __( 'Új %s létrehozása', 'bitdev' ), $this->singular ),
+        'all_items'          => sprintf( __( '%s listája', 'bitdev' ), $this->plural ),
+        'view_item'          => sprintf( __( '%s megtekintése', 'bitdev' ), $this->singular ),
+        'search_items'       => sprintf( __( 'Keresés a %s között', 'bitdev' ), $this->plural ),
+        'not_found'          => sprintf( __( 'Nincsenek létrehozott %s', 'bitdev' ), $this->plural ),
+        'not_found_in_trash' => sprintf( __( 'Nem található %s a lomtárban', 'bitdev' ), $this->plural ),
+        'parent_item_colon'  => isset( $this->arg_overrides['hierarchical'] ) && $this->arg_overrides['hierarchical'] ? sprintf( __( 'Szülő %s:', 'bitdev' ), $this->singular ) : null,
         'menu_name'          => $this->plural,
       );
 
@@ -112,26 +112,26 @@ if ( ! class_exists( 'CPT_Core' ) ) :
         0 => '',
         2 => __( 'Custom field frissítésre került.' ),
         3 => __( 'Custom field törölve.' ),
-        4 => sprintf( __( '%1$s frissítve.', 'kvbf' ), $this->singular ),
-        5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s elem visszaállítva a következő verzióra %2$s', 'kvbf' ), $this->singular , wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-        7 => sprintf( __( '%1$s elemen mentve.', 'kvbf' ), $this->singular ),
+        4 => sprintf( __( '%1$s frissítve.', 'bitdev' ), $this->singular ),
+        5 => isset( $_GET['revision'] ) ? sprintf( __( '%1$s elem visszaállítva a következő verzióra %2$s', 'bitdev' ), $this->singular , wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+        7 => sprintf( __( '%1$s elemen mentve.', 'bitdev' ), $this->singular ),
       );
 
       if ( $this->get_arg( 'public' ) ) {
 
-        $cpt_messages[1] = sprintf( __( '%1$s elem frissítve.', 'kvbf' ), $this->singular, esc_url( get_permalink( $post_ID ) ) );
-        $cpt_messages[6] = sprintf( __( '%1$s elem közzétéve.', 'kvbf' ), $this->singular, esc_url( get_permalink( $post_ID ) ) );
-        $cpt_messages[8] = sprintf( __( '%1$s submitted.', 'kvbf' ), $this->singular, esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) );
-        $cpt_messages[9] = sprintf( __( '%1$s elem időzítve: <strong>%2$s</strong>.', 'kvbf' ), $this->singular, date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) );
-        $cpt_messages[10] = sprintf( __( '%1$s vázlat frissítve.', 'kvbf' ), $this->singular, esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) );
+        $cpt_messages[1] = sprintf( __( '%1$s elem frissítve.', 'bitdev' ), $this->singular, esc_url( get_permalink( $post_ID ) ) );
+        $cpt_messages[6] = sprintf( __( '%1$s elem közzétéve.', 'bitdev' ), $this->singular, esc_url( get_permalink( $post_ID ) ) );
+        $cpt_messages[8] = sprintf( __( '%1$s submitted.', 'bitdev' ), $this->singular, esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) );
+        $cpt_messages[9] = sprintf( __( '%1$s elem időzítve: <strong>%2$s</strong>.', 'bitdev' ), $this->singular, date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) );
+        $cpt_messages[10] = sprintf( __( '%1$s vázlat frissítve.', 'bitdev' ), $this->singular, esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) );
 
       } else {
 
-        $cpt_messages[1] = sprintf( __( '%1$s elem frissítve.', 'kvbf' ), $this->singular );
-        $cpt_messages[6] = sprintf( __( '%1$s elem közzétéve.', 'kvbf' ), $this->singular );
-        $cpt_messages[8] = sprintf( __( '%1$s submitted.', 'kvbf' ), $this->singular );
-        $cpt_messages[9] = sprintf( __( '%1$s elem időzítve: <strong>%2$s</strong>.', 'kvbf' ), $this->singular, date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) );
-        $cpt_messages[10] = sprintf( __( '%1$s vázlat frissítve.', 'kvbf' ), $this->singular );
+        $cpt_messages[1] = sprintf( __( '%1$s elem frissítve.', 'bitdev' ), $this->singular );
+        $cpt_messages[6] = sprintf( __( '%1$s elem közzétéve.', 'bitdev' ), $this->singular );
+        $cpt_messages[8] = sprintf( __( '%1$s submitted.', 'bitdev' ), $this->singular );
+        $cpt_messages[9] = sprintf( __( '%1$s elem időzítve: <strong>%2$s</strong>.', 'bitdev' ), $this->singular, date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ) );
+        $cpt_messages[10] = sprintf( __( '%1$s vázlat frissítve.', 'bitdev' ), $this->singular );
 
       }
 
@@ -144,7 +144,7 @@ if ( ! class_exists( 'CPT_Core' ) ) :
 
       $screen = get_current_screen();
       if ( isset( $screen->post_type ) && $screen->post_type == $this->post_type )
-        return sprintf( __( '%s Title', 'kvbf' ), $this->singular );
+        return sprintf( __( '%s Title', 'bitdev' ), $this->singular );
 
       return $title;
     }

@@ -26,7 +26,7 @@
 
   include_once 'custom.php';
 
-  include_once 'extra-options.php';
+  //include_once 'extra-options.php';
 
   include_once 'tmce-editor.php';
 
@@ -34,15 +34,19 @@
 
   include_once 'types/cpt-heroslider.php';
 
-  include_once 'types/cpt-occasions.php';
+  //include_once 'types/cpt-occasions.php';
+
+  include_once 'types/cpt-benefits.php';
 
   include_once 'types/cpt-editable-elements.php';
 
-  include_once 'types/cpt-favourites.php';
+  //include_once 'types/cpt-favourites.php';
 
-  include_once 'types/ct-product-occasions.php';
+  //include_once 'types/ct-product-occasions.php';
 
-  include_once 'types/ct-product-collections.php';
+  //include_once 'types/ct-product-collections.php';
+
+  //include_once 'types/ct-product-colors.php';
 
   include_once 'woocommerce/wc.php';
 

@@ -20,6 +20,9 @@ if ( have_posts() ) : ?>
     <div class="heroslider__item">
       <!--img class="heroslider__bg" src="<?php the_field( 'slide_hatterkep', $post->ID ); ?>" /-->
       <div class="heroslider__content" style="background-image: url('<?php the_field( 'slide_hatterkep', $post->ID ); ?>')">
+        <?php
+        $slider_content = the_field( 'slide_szoveg', $post->ID );
+        if ( $slider_content ) : ?>
         <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -27,14 +30,15 @@ if ( have_posts() ) : ?>
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
     </div>
     <?php
-    endforeach; 
+    endforeach;
     wp_reset_postdata();?>
   </div>
   <div class="heroslider__bottom">
-    <span class="heroslider__bottom-text"><?php _e('Roses that lasts forever', 'vintageworld') ?></span>
+    <span class="heroslider__bottom-text"><?php _e(get_option('general_option_hero_slider_bottom'), 'vintageworld') ?></span>
   </div>
 </section>
 <?php endif; ?>

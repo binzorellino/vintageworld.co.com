@@ -1,0 +1,622 @@
+.product-details-wrapper {
+  margin-top: 55px;
+
+  .product-gallery-wrapper {
+    padding-left: 0;
+
+  }
+
+  .product-information-wrapper {
+    padding-right: 0;
+
+    .separator {
+      margin: 35px 0;
+      border: 0;
+      height: 2px;
+      width: 100%;
+      background-color: $gray;
+
+    }
+
+    .kiegeszito_informaciok {
+      width: 100%;
+      border-collapse: collapse;
+
+      tr {
+
+        td {
+          padding: 7px 0;
+          @include font-size(19px);
+          color: $gray;
+
+          @include first(1) {
+            width: 40%;
+            font-weight: normal;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .price-wrapper {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+      @include font-size(35px);
+      color: $pink;
+
+    }
+
+    .cart {
+      margin-top: 35px;
+
+      .qty-cartbtn-wrapper {
+
+        @include clearfix();
+
+        .quantity {
+          width: 50%;
+          float: left;
+
+          input {
+            width: 150px;
+            margin: 0;
+            padding: 22px 20px;
+            border: 0;
+            background-color: $gray;
+            @include font-size(19px);
+            color: $gray;
+            text-align: center;
+
+          }
+
+          span {
+            display: inline-block;
+            margin: 0 25px;
+            @include font-size(19px);
+            color: $gray;
+
+          }
+
+        }
+
+        .cart-wrapper {
+          width: 50%;
+          float: left;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .woocommerce-product-gallery {
+    width: 600px;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      line-height: 0;
+
+    }
+
+    .magnet {
+      position: absolute;
+      font-family: $websymbol;
+      @include font-size(19px);
+      color: $gray;
+      left: 20px;
+      top: 20px;
+      z-index: 100;
+
+    }
+
+    .woocommerce-product-gallery__image {
+      border: 1px solid $gray;
+      line-height: 0;
+
+    }
+
+    .flex-viewport {
+      border: 1px solid $gray;
+
+      .woocommerce-product-gallery__image {
+        border: 0;
+
+      }
+
+    }
+
+    &.woocommerce-product-gallery--without-images {
+
+      .woocommerce-product-gallery__wrapper {
+        border: 1px solid $gray;
+
+      }
+
+    }
+
+    .woocommerce-product-gallery__wrapper {
+      margin: 0;
+
+    }
+
+    ol {
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+      line-height: 0;
+
+      li {
+        display: inline-block;
+        width: 30%;
+        margin-right: ( 100% - ( 30 * 3 ) ) / 2;
+        padding: 10px;
+        border: 1px solid $gray;
+        cursor: pointer;
+
+        &:nth-of-type(3n) {
+          margin-right: 0;
+
+        }
+
+        &:hover {
+          border-color: $pink;
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .woocommerce-product-details__short-description {
+    margin-top: 12px;
+
+    p {
+      margin: 0 0 10px;
+      padding: 0;
+      @include font-size(19px);
+      line-height: 1.44em;
+      color: $gray;
+
+      @include last(1) {
+        margin: 0;
+
+      }
+
+    }
+
+  }
+
+  .downlodable-files {
+    margin: 65px 0;
+    padding: 30px 0;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+
+    .inner-container {
+      padding: 15px 0 0 30px;
+
+    }
+
+    .title {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+      @include font-size(37px);
+      line-height: 1.11em;
+      color: $gray;
+
+    }
+
+    .text {
+      display: block;
+      margin-top: 6px;
+      @include font-size(19px);
+      line-height: 1.22em;
+      color: $gray;
+
+    }
+
+    .file-container-wrapper {
+      @include clearfix();
+
+      .file-container {
+        width: (100% / 6);
+        float: left;
+        text-align: center;
+
+        .file-format {
+          display: block;
+          width: 100px;
+          height: 100px;
+          border: 3px solid $pink;
+          @include border-radius(50%);
+          font-weight: normal;
+          @include font-size(18px);
+          line-height: 100px;
+          color: $gray;
+          text-transform: uppercase;
+          @include transition(color .3s ease);
+
+          &:hover {
+            color: $pink;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen($null, ($md - 1)) {
+
+
+  .product-details-wrapper {
+    margin-top: 50px;
+
+    .product-gallery-wrapper,
+    .product-information-wrapper {
+      padding: 0;
+
+    }
+
+    .product-information-wrapper {
+      margin-top: 55px;
+
+    }
+
+    .product-information-wrapper {
+
+      .kiegeszito_informaciok {
+
+        tr {
+
+          td {
+            @include font-size(15px);
+
+          }
+
+        }
+
+      }
+
+      .price-wrapper {
+        @include font-size(30px);
+
+      }
+
+      .cart {
+        width: 60%;
+
+        .qty-cartbtn-wrapper {
+
+          .quantity {
+            width: 60%;
+
+            input {
+              @include font-size(17px);
+
+            }
+
+            span {
+              @include font-size(17px);
+
+            }
+
+          }
+
+          .cart-wrapper {
+            width: 40%;
+
+            .btn.btn-addtocart {
+              padding: 22px 33px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-product-gallery {
+      width: 100%;
+
+    }
+
+    .woocommerce-product-details__short-description {
+
+      p {
+        @include font-size(15px);
+
+      }
+
+    }
+
+    .downlodable-files {
+      margin: 40px 0;
+
+      .inner-container {
+        padding: 15px 0 0 0;
+
+      }
+
+      .title {
+        @include font-size(26px);
+
+      }
+
+      .text {
+        @include font-size(15px);
+
+      }
+
+      .file-container-wrapper {
+        margin-top: 25px;
+
+        .file-container {
+
+          .file-format {
+            @include font-size(17px);
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen( $md, ($lg - 1) ) {
+
+  .product-details-wrapper {
+    margin-top: 50px;
+
+    .product-gallery-wrapper,
+    .product-information-wrapper {
+      padding: 0;
+
+    }
+
+    .product-information-wrapper {
+      margin-top: 55px;
+
+    }
+
+    .product-information-wrapper {
+
+      .kiegeszito_informaciok {
+
+        tr {
+
+          td {
+            @include font-size(17px);
+
+          }
+
+        }
+
+      }
+
+      .price-wrapper {
+        @include font-size(30px);
+
+      }
+
+      .cart {
+        width: 60%;
+
+        .qty-cartbtn-wrapper {
+
+          .quantity {
+            width: 60%;
+
+            input {
+              @include font-size(17px);
+
+            }
+
+            span {
+              @include font-size(17px);
+
+            }
+
+          }
+
+          .cart-wrapper {
+            width: 40%;
+
+            .btn.btn-addtocart {
+              padding: 22px 33px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-product-gallery {
+      width: 100%;
+
+    }
+
+    .woocommerce-product-details__short-description {
+
+      p {
+        @include font-size(17px);
+
+      }
+
+    }
+
+    .downlodable-files {
+      margin: 40px 0;
+
+      .inner-container {
+        padding: 15px 0 0 0;
+
+      }
+
+      .title {
+        @include font-size(30px);
+
+      }
+
+      .text {
+        @include font-size(15px);
+
+      }
+
+      .file-container-wrapper {
+        margin-top: 25px;
+
+        .file-container {
+
+          .file-format {
+            @include font-size(17px);
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen( $lg, ($xl - 1) ) {
+
+  .product-details-wrapper {
+    margin-top: 50px;
+
+    .product-information-wrapper {
+
+      .kiegeszito_informaciok {
+
+        tr {
+
+          td {
+            @include font-size(17px);
+
+          }
+
+        }
+
+      }
+
+      .price-wrapper {
+        @include font-size(30px);
+
+      }
+
+      .cart {
+
+        .qty-cartbtn-wrapper {
+
+          .quantity {
+            width: 60%;
+
+            input {
+              @include font-size(17px);
+
+            }
+
+            span {
+              @include font-size(17px);
+
+            }
+
+          }
+
+          .cart-wrapper {
+            width: 40%;
+
+            .btn.btn-addtocart {
+              padding: 22px 33px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-product-gallery {
+      width: 100%;
+
+    }
+
+    .woocommerce-product-details__short-description {
+
+      p {
+        @include font-size(17px);
+
+      }
+
+    }
+
+    .downlodable-files {
+      margin: 40px 0;
+
+      .inner-container {
+        padding: 15px 0 0 0;
+
+      }
+
+      .title {
+        @include font-size(30px);
+
+      }
+
+      .text {
+        @include font-size(15px);
+
+      }
+
+      .file-container-wrapper {
+
+        .file-container {
+
+          .file-format {
+            @include font-size(17px);
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

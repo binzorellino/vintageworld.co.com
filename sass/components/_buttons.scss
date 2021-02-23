@@ -1,0 +1,42 @@
+.btn,
+.woocommerce .button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  @include border-radius(0px);
+  display: inline-block;
+  position: relative;
+  text-decoration: none !important;
+  padding: 11px 55px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $blue;
+  background-color: $black;
+  color: $white;
+  cursor: pointer;
+  @include transition(all .3s);
+
+  .entry-content & {
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $pink;
+  }
+}
+
+.more-link {
+  position: relative;
+  display: inline-block;
+  @include transition(color .3s);
+
+  &::after {
+    content: '\003E';
+    padding-left: 8px;
+  }
+
+  &:hover {
+    color: $pink;
+  }
+}

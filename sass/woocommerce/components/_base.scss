@@ -1,0 +1,88 @@
+// Utility classes
+.clear {
+  clear: both;
+
+}
+
+.clear-top {
+  margin-top: 0;
+  padding-top: 0;
+
+}
+
+//  Main WooCommerce styles
+.woocommerce {
+
+  .blockUI.blockOverlay {
+    position: relative;
+    @include loader();
+
+  }
+
+  .loader {
+    @include loader();
+
+  }
+
+  a.remove {
+    display: block;
+    font-size: 1.5em;
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    line-height: 1;
+    border-radius: 100%;
+    color: $error-color!important;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+
+    &:hover {
+      color: $white!important;
+      background: $error-color;
+    }
+
+  }
+
+  .quantity .qty {
+    width: 3.631em;
+    text-align: center;
+
+  }
+
+}
+
+.woocommerce-password-strength {
+  margin-top: 10px;
+  font-weight: normal;
+  color: $black-1;
+  @include font-size(15px);
+
+  &.short {
+    color: $error-color;
+
+  }
+
+  &.bad {
+    color: $error-color;
+
+  }
+
+  &.good {
+    color: $good;
+
+  }
+
+  &.strong {
+    color: $strong;
+
+  }
+
+}
+
+.woocommerce-password-hint {
+  display: block;
+  margin-top: 5px;
+  line-height: 1.33em;
+
+}

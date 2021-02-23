@@ -1,0 +1,383 @@
+.woocommerce-account {
+
+  .woocommerce-MyAccount-navigation {
+    float: left;
+    width: 25%;
+
+  }
+
+  .woocommerce-MyAccount-content {
+    float: right;
+    width: 75%;
+
+  }
+
+}
+
+.nothing-content {
+  @include font-size(13px);
+
+}
+
+.woocommerce-account {
+
+  .woocommerce {
+    @include clearfix();
+
+    .no-topspace {
+      margin-top: 0;
+      padding-top: 0;
+
+    }
+
+  }
+
+  .woocommerce-MyAccount-navigation {
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 0;
+        margin: 5px 0;
+
+        &::before {
+          content: none;
+
+        }
+
+        &.is-active {
+          font-weight: normal;
+
+          a {
+            color: $gray;
+
+          }
+
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            font-weight: normal;
+            text-decoration: none;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .woocommerce-MyAccount-content {
+
+    h3 {
+      margin-top: 0;
+      padding-top: 0;
+
+    }
+
+    a {
+      text-decoration: none;
+
+    }
+
+    .woocommerce-Address {
+
+      address {
+
+        margin: 25px 0;
+
+      }
+
+    }
+
+  }
+
+  .woocommerce-Addresses {
+    margin-top: 35px;
+
+  }
+
+  .addresses .title {
+    @include clearfix();
+
+    h3 {
+      float: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+    }
+
+    .edit {
+      float: none;
+
+    }
+
+  }
+
+  ol.commentlist.notes li.note {
+
+    p.meta {
+      font-weight: 700;
+      margin-bottom: 0;
+
+    }
+
+    .description p:last-child {
+      margin-bottom: 0;
+
+    }
+
+  }
+
+  ul.digital-downloads {
+    margin-left: 0;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+
+      &::before {
+        @include iconbefore('\e00a');
+
+      }
+
+      .count {
+        float: right;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Mobil álló
+@include screen($null, $sm) {
+
+  .woocommerce-account {
+
+    .woocommerce-MyAccount-navigation {
+      width: 100%;
+
+    }
+
+    .woocommerce-MyAccount-content {
+      width: 100%;
+
+    }
+
+  }
+
+  .woocommerce-account {
+
+    .woocommerce-MyAccount-navigation {
+
+      ul {
+        margin: 0 0 35px;
+
+        li {
+          display: inline-block;
+          width: 49%;
+          margin-right: 2%;
+          @include font-size(13px);
+          line-height: 1.2em;
+          text-align: left;
+
+          &:nth-child(2n) {
+            margin-right: 0;
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-MyAccount-content {
+
+      h3 {
+        margin-bottom: .5em;
+
+      }
+
+      p {
+        @include font-size(14px);
+
+      }
+
+      .woocommerce-Address {
+        width: 100%;
+        float: none;
+
+        &:nth-child(2) {
+          margin-top: 35px;
+
+        }
+
+        address {
+          margin-top: 15px;
+          @include font-size(14px);
+          line-height: 1.4em;
+
+        }
+
+        .btn {
+          margin-top: 20px;
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-Addresses {
+      margin-top: 30px;
+
+    }
+
+  }
+
+}
+
+
+// Tablet álló + mobil fekvő
+@include screen(($sm + 1), $md) {
+
+  .woocommerce-account {
+
+    .woocommerce-MyAccount-navigation {
+      width: 25%;
+
+    }
+
+    .woocommerce-MyAccount-content {
+      width: 75%;
+
+    }
+
+  }
+
+  .nothing-content {
+    @include font-size(13px);
+
+  }
+
+  .woocommerce-account {
+
+    .woocommerce-MyAccount-navigation {
+
+      ul {
+
+        li {
+          padding: 0;
+          margin: 3px 0;
+
+          a {
+            @include font-size(15px);
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-MyAccount-content {
+
+      h3 {
+        @include font-size(25px);
+
+      }
+
+      p {
+        @include font-size(15px);
+
+      }
+
+      .woocommerce-Address {
+        address {
+          margin-top: 25px;
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-Addresses {
+      margin-top: 25px;
+      @include font-size(15px);
+
+      .btn {
+        margin-top: 20px;
+        padding: 8px 16px;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Mobil fekvő
+@include screen(($sm + 1), $md, landscape) {
+
+  .woocommerce-account {
+
+    .woocommerce-MyAccount-navigation {
+      width: 100%;
+
+    }
+
+    .woocommerce-MyAccount-content {
+      width: 100%;
+
+    }
+
+  }
+
+  .woocommerce-account {
+
+    .woocommerce-MyAccount-navigation {
+
+      ul {
+        margin: 0 0 35px;
+
+        li {
+          display: table-cell;
+          vertical-align: middle;
+          width: 24%;
+          margin-right: (100% - (24 * 4)) / 3;
+          @include font-size(13px);
+          line-height: 1.2em;
+          text-align: left;
+
+          &:nth-child(4n) {
+            margin-right: 0;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,6 +1,6 @@
 <?php
 
-if( !current_user_can( 'admin' ) && !current_user_can( 'administrator' ) ) :
+if( current_user_can( 'admin' ) && current_user_can( 'administrator' ) ) :
 
   $url = get_site_url() . '/coming-soon';
   wp_redirect($url);
@@ -44,12 +44,59 @@ else :
 <main id="main">
 <div id="site-canvas">
 
-<header class="site-header">
+<header class="site-header<?php if ( !is_front_page() ) echo ' shadowed'; ?>">
   <div class="site-header__top">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <span class="site-header__message">Get your rosebox just in 1 day!</span>
+          <?php /* átmenetileg szükségtelen <span class="site-header__message"><?php _e(get_option('general_option_header_promo'), 'vintageworld'); ?></span> */ ?>
+          <?php
+          if ( get_option('general_option_phone') ) :
+          $phone_number = get_option('general_option_phone');
+          $phone_number_sanitized = sanitize_phone_number($phone_number);
+          ?>
+          <div class="site-header__contacts">
+            <?php
+            if ( get_option('general_option_phone') ) :
+            ?>
+            <span class="site-header__contact-item"><?php echo __( 'Customer service', 'vintageworld' ) . ':&nbsp;'; ?><a class="site-header__contact-link" href="tel:<?php echo antispambot( $phone_number_sanitized ); ?>" title="<?php _e( 'Call the number', 'vintageworld' ) ?>"><?php echo antispambot( $phone_number ); ?></a> <span class="site-header__contact-hint"><?php _e( '(Available: Monday to Friday from 8 a.m. to 3 p.m.)', 'vintageworld' ) ?></span></span>
+            <?php
+            endif;
+            ?>
+          </div>
+          <?php
+          endif;
+          ?>
+          <?php
+          if ( get_option('general_option_facebook') || get_option('general_option_instagram') ) :
+          ?>
+          <div class="site-header__socials">
+            <?php
+            if ( get_option('general_option_facebook') ) :
+            ?>
+            <a class="site-header__social-link" href="<?php echo get_option('general_option_facebook'); ?>" target="_blank" title="<?php _e( 'Visit our Facebook page', 'vintageworld' ) ?>">G</a>
+            <?php
+            endif;
+            if ( get_option('general_option_instagram') ) :
+            ?>
+            <a class="site-header__social-link" href="<?php echo get_option('general_option_instagram'); ?>" target="_blank" title="<?php _e( 'Visit our Instagram feed', 'vintageworld' ) ?>">e</a>
+            <?php
+            endif;
+            if ( get_option('general_option_pinterest') ) :
+            ?>
+            <a class="site-header__social-link" href="<?php echo get_option('general_option_pinterest'); ?>" target="_blank" title="<?php _e( 'Visit our Pinterest feed', 'vintageworld' ) ?>">w</a>
+            <?php
+            endif;
+            if ( get_option('general_option_tiktok') ) :
+            ?>
+            <a class="site-header__social-link" href="<?php echo get_option('general_option_tiktok'); ?>" target="_blank" title="<?php _e( 'Visit our Tik Tok feed', 'vintageworld' ) ?>">Ê</a>
+            <?php
+            endif;
+            ?>
+          </div>
+          <?php
+          endif;
+          ?>
         </div>
       </div>
     </div>
@@ -78,7 +125,7 @@ else :
             </a>
           </div>
           <nav class="site-header__menu-container">
-            <?php wp_nav_menu( array( 'theme_location' => 'fomenu', 'depth' => 1, 'menu_id' => 'fejlec-menu' ) ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'fomenu', 'depth' => 3, 'menu_id' => 'fejlec-menu' ) ); ?>
 
           </nav>
           <nav class="site-header__languages-wrapper">
@@ -115,19 +162,46 @@ else :
             ?>
           </nav>
           <a class="site-header__button-search" href="javascript:;" title="<?php _e('Search', 'vintageworld') ?>"></a>
-          <a class="site-header__button-favorites" href="<?php echo get_page_link( 806 ); ?>" title="<?php _e('Favorites', 'vintageworld') ?>"></a>
+          <a class="site-header__button-favorites" href="<?php echo get_page_link( 806 ); ?>" title="<?php _e('Favorites', 'vintageworld') ?>">
+            <?php
+            $favourites_counter = TInvWL_Public_WishlistCounter::counter();
+            if ( $favourites_counter ) :
+            ?>
+            <span class="site-header__button-favorites-badge"><?php echo $favourites_counter; ?></span>
+            <?php
+            endif;
+            ?>
+          </a>
           <a class="site-header__button-member" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My account', 'vintageworld') ?>"></a>
           <a class="site-header__button-cart" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('Cart', 'vintageworld') ?>">
-            <span class="site-header__button-cart-badge"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+          <?php
+            $cart_counter = WC()->cart->get_cart_contents_count();
+            if ( $cart_counter ) :
+            ?>
+            <span class="site-header__button-cart-badge"><?php echo $cart_counter; ?></span>
+            <?php
+            else :
+            ?>
+            <span class="site-header__button-cart-badge" style="display: none;"><?php echo $cart_counter; ?></span>
+            <?php
+            endif;
+            ?>
           </a>
-          <a id="open-menu" class="site-header__hamburger-icon" href="#menu">
+          <input type="checkbox" class="site-header__hamburger-toggler" id="open-menu">
+          <i class="site-header__mobile-menu-overlay"></i>
+          <label for="open-menu" class="site-header__hamburger-icon">
             <span class="hamburger-icon__bar"></span>
-          </a>
+          </label>
+          <nav class="site-header__mobile-menu-container">
+            <?php wp_nav_menu( array( 'theme_location' => 'fomenu', 'depth' => 3, 'menu_id' => 'mobil-menu' ) ); ?>
+
+          </nav>
         </div>
       </div>
     </div>
   </div>
 </header>
+<div class="shadow-header"></div>
 <?php
 endif;
 ?>

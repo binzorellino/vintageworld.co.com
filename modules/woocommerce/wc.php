@@ -41,25 +41,63 @@
 
   add_filter( 'woocommerce_billing_fields' , 'change_billing_fields' );
   function change_billing_fields( $fields ) {
-    $fields['billing_address_1']['class'] = array('form-row-first');
-    $fields['billing_address_2']['label'] = '&nbsp;';
-    $fields['billing_address_2']['class'] = array('form-row-last');
-    unset($fields['billing_state']);
+
+    $fields['billing_first_name']['class'] = array('form-row-first');
+    $fields['billing_first_name']['priority'] = 5;
+
+    $fields['billing_last_name']['class'] = array('form-row-last');
+    $fields['billing_last_name']['priority'] = 10;
+
     $fields['billing_email']['class'] = array('form-row-first');
-    $fields['billing_email']['priority'] = 20;
-    $fields['billing_company']['class'] = array('form-row-first');
+    $fields['billing_email']['priority'] = 15;
+
     $fields['billing_phone']['class'] = array('form-row-last');
     $fields['billing_phone']['priority'] = 20;
+
+    $fields['billing_company']['class'] = array('form-row-first');
+    $fields['billing_company']['priority'] = 25;
+
+    $fields['billing_vatnumber']['class'] = array('form-row-last');
+    $fields['billing_vatnumber']['priority'] = 30;
+
+    $fields['billing_address_1']['class'] = array('form-row-first');
+    $fields['billing_address_1']['priority'] = 35;
+
+    $fields['billing_address_2']['label'] = '&nbsp;';
+    $fields['billing_address_2']['class'] = array('form-row-last');
+    $fields['billing_address_2']['priority'] = 40;
+
     $fields['billing_city']['class'] = array('form-row-first');
+    $fields['billing_city']['priority'] = 45;
+
     $fields['billing_postcode']['class'] = array('form-row-last');
+    $fields['billing_postcode']['priority'] = 50;
+
+    unset($fields['billing_state']);
+
     return $fields;
   }
 
   add_filter( 'woocommerce_shipping_fields' , 'change_shipping_fields' );
   function change_shipping_fields( $fields ) {
+
+    $fields['shipping_first_name']['class'] = array('form-row-first');
+
+    $fields['shipping_last_name']['class'] = array('form-row-last');
+
+    $fields['shipping_company']['class'] = array('form-row-first');
+
+    $fields['shipping_country']['class'] = array('form-row-last');
+
     $fields['shipping_address_1']['class'] = array('form-row-first');
-    $fields['shipping_address_2']['label'] = '&nbsp;';
+
     $fields['shipping_address_2']['class'] = array('form-row-last');
+    $fields['shipping_address_2']['label'] = '&nbsp;';
+
+    $fields['shipping_city']['class'] = array('form-row-first');
+
+    $fields['shipping_postcode']['class'] = array('form-row-last');
+
     unset($fields['shipping_state']);
     return $fields;
   }
@@ -155,6 +193,43 @@
 
     }
 
+  }
+
+  // set actual product object price to zero on page load
+  /*add_action( 'template_redirect', 'change_and_save_product_price' );
+  function change_and_save_product_price() {
+    if ( get_post_type() === "product" ){
+      $new_price = 0;
+      $product = wc_get_product( get_the_id() );
+      $product->set_regular_price( $new_price );
+      $product->set_price( $new_price );
+      $product->save();
+    }
+  }*/
+
+  // custom woocommerce pagination arrows
+  add_filter( 'woocommerce_pagination_args', 'custom_woocommerce_pagination' );
+  function custom_woocommerce_pagination( $args ) {
+    $args['prev_text'] = '&lt;';
+    $args['next_text'] = '&gt;';
+    return $args;
+  }
+
+  // remove the default woocommerce tabs' headings
+  add_filter( 'woocommerce_product_description_heading', '__return_null' );
+  add_filter( 'woocommerce_product_additional_information_heading', '__return_null' );
+
+  /* Remove product meta */
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+  add_filter( 'woocommerce_add_to_cart_fragments', 'update_cart_count_fragments', 10, 1 );
+  function update_cart_count_fragments( $fragments ) {
+    if ( WC()->cart->get_cart_contents_count() != 0 ) {
+      $fragments['.site-header__button-cart-badge'] = '<span class="site-header__button-cart-badge">' . WC()->cart->get_cart_contents_count() . '</span>';
+    } else {
+      $fragments['.site-header__button-cart-badge'] = '<span class="site-header__button-cart-badge" style="display: none;">' . WC()->cart->get_cart_contents_count() . '</span>';
+    }
+    return $fragments;
   }
 
   require( 'login.php' );

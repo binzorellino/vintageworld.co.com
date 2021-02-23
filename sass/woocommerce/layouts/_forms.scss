@@ -1,0 +1,93 @@
+.woocommerce,
+.woocommerce-page {
+
+  form {
+    .form-row {
+      @include clearfix();
+
+      label {
+        display: block;
+
+        &.checkbox {
+          display: inline;
+
+        }
+
+      }
+
+      select {
+        width: 100%;
+
+      }
+
+      .input-text {
+        box-sizing: border-box;
+        width: 100%;
+
+      }
+
+    }
+
+    .form-row-first,
+    .form-row-last {
+      width: 47%;
+      overflow: visible;
+
+    }
+
+    .form-row-first {
+      float: left;
+
+    }
+
+    .form-row-last {
+      float: right;
+
+    }
+
+    .form-row-wide {
+      clear: both;
+
+    }
+
+  }
+
+
+  .woocommerce-billing-fields,
+  .woocommerce-shipping-fields {
+    @include clearfix();
+
+  }
+
+}
+
+
+// Mobil álló
+@include screen($null, $sm) {
+
+  .woocommerce,
+  .woocommerce-page {
+
+    form {
+
+      .form-row-first,
+      .form-row-last {
+        width: 100%;
+
+      }
+
+      .form-row-first {
+        float: none;
+
+      }
+
+      .form-row-last {
+        float: none;
+
+      }
+
+    }
+
+  }
+
+}

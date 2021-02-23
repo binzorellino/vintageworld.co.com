@@ -1,4 +1,5 @@
 .site-footer {
+  margin-top: 70px;
 
   &.site-footer-fixed {
     position: fixed;
@@ -7,6 +8,7 @@
     right: 0;
   }
 
+  /* átmenetileg szükségtelen
   .site-footer__top {
     text-align: center;
     padding: 30px 0;
@@ -18,9 +20,11 @@
       @include font-size(21px);
     }
   }
+  */
 
   .site-footer__bottom {
-    height: 220px;
+    padding: 44px 0;
+    text-align: center;
     background-color: $pink-3;
     border-top: 24px solid $pink-2;
   }
@@ -30,20 +34,21 @@
 // mobil álló
 @include screen( $null, ($md - 1) ) {
   .site-footer {
+    margin-top: 40px;
 
     .site-footer__top {
       padding: 15px 0;
       margin: 20px 0;
-  
+
       .site-footer__legal-notice {
         margin: 0;
         line-height: 1.5;
         @include font-size(14px);
       }
     }
-  
+
     .site-footer__bottom {
-      height: 100px;
+
     }
   }
 }
@@ -60,14 +65,14 @@
     .site-footer__top {
       padding: 5px 0;
       margin: 20px 0;
-  
+
       .site-footer__legal-notice {
         @include font-size(19px);
       }
     }
-  
+
     .site-footer__bottom {
-      height: 150px;
+
     }
   }
 }
@@ -79,14 +84,14 @@
     .site-footer__top {
       padding: 20px 0;
       margin: 30px 0;
-  
+
       .site-footer__legal-notice {
         @include font-size(19px);
       }
     }
-  
+
     .site-footer__bottom {
-      height: 120px;
+
     }
   }
 }

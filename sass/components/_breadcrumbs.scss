@@ -1,0 +1,96 @@
+#custbread {
+  margin: 50px 0 0;
+  padding: 0;
+  position: relative;
+  z-index: 10;
+
+  [class^="item"],
+  .separator {
+    list-style: none;
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: $gray;
+    @include font-size(17px);
+
+    &::before {
+      content: none;
+    }
+
+    a {
+      color: $gray;
+      text-decoration: none;
+      @include transition(color .3s ease);
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    span {
+      cursor: default;
+    }
+  }
+
+  .separator {
+    margin: 0 12px;
+    cursor: default;
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  #custbread {
+    margin-top: 5px;
+
+    [class^="item"],
+    .separator {
+      @include font-size(15px);
+
+      &::before {
+
+      }
+
+      a {
+
+      }
+
+      span {
+
+      }
+    }
+
+    .separator {
+      margin: 0 8px;
+    }
+  }
+}
+
+//tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  #custbread {
+    margin-top: 25px;
+
+    [class^="item"],
+    .separator {
+
+      &::before {
+
+      }
+
+      a {
+
+      }
+
+      span {
+
+      }
+    }
+
+    .separator {
+
+    }
+  }
+}

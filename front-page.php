@@ -13,11 +13,11 @@
   get_template_part( 'template-parts/sections/section', 'favourites' );
 
   get_template_part( 'template-parts/sections/section', 'subscribe' );
-  
-  get_template_part( 'template-parts/sections/section', 'instagram' );
+
+  //get_template_part( 'template-parts/sections/section', 'instagram' );
 
   get_sidebar();
 
   get_footer();
-  
+
 ?>

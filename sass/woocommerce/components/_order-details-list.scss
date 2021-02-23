@@ -1,0 +1,170 @@
+.woocommerce {
+
+  ul.order_details {
+    @include clearfix();
+    display: table;
+    width: 100%;
+    margin: 0 0 2em;
+    list-style: none;
+    background-color: lighten($pink, 20%);
+    padding: .5em;
+    @include border-radius(5px);
+
+    li {
+      display: table-cell;
+      text-transform: uppercase;
+      font-size: .715em;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      &::before {
+        content: none;
+
+      }
+
+      strong {
+        font-weight: normal;
+        display: block;
+        font-size: 1.4em;
+        text-transform: none;
+        line-height: 1.5;
+
+      }
+
+    }
+
+  }
+
+  .order-top-short-info {
+    @include clearfix();
+    display: table;
+    width: 100%;
+    margin: 0 0 2em;
+    list-style: none;
+    background-color: lighten($pink, 20%);
+    padding: .8em;
+    @include border-radius(5px);
+
+    p {
+      margin: 0;
+      padding: 0;
+
+    }
+
+    mark {
+      background-color: transparent;
+      font-weight: normal;
+      color: $black-1;
+
+      &.order-status {
+        text-transform: uppercase;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Mobil álló
+@include screen($null, $sm) {
+
+  .woocommerce {
+
+    ul.order_details {
+      margin: 0 0 1em;
+
+      li {
+        display: block;
+        float: left;
+        width: 50%;
+        font-size: .7em;
+        margin-bottom: 10px;
+
+        @include last(2) {
+          margin-bottom: 0;
+
+        }
+
+        strong {
+          font-size: 1.1em;
+          line-height: 1.1em;
+          margin-top: 3px;
+
+        }
+
+      }
+
+    }
+
+    .order-top-short-info {
+      @include clearfix();
+      display: table;
+      width: 100%;
+      margin: 0 0 2em;
+      list-style: none;
+      background-color: lighten($pink, 20%);
+      padding: .8em;
+      @include border-radius(5px);
+
+      p {
+        margin: 0;
+        padding: 0;
+
+      }
+
+      mark {
+        background-color: transparent;
+        font-weight: normal;
+        color: $black-1;
+
+        &.order-status {
+          text-transform: uppercase;
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+// Tablet álló + mobil fekvő
+@include screen(($sm + 1), $md) {
+
+  .woocommerce {
+
+    ul.order_details {
+      margin: 0 0 1.5em;
+
+      li {
+        font-size: .615em;
+
+        strong {
+          font-size: 1.3em;
+
+        }
+
+      }
+
+    }
+
+    .order-top-short-info {
+
+      p {
+       font-size: 14px!important;
+
+      }
+
+    }
+
+  }
+
+}

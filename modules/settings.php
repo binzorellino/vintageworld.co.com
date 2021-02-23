@@ -22,7 +22,8 @@
   function register_custom_menu() {
     register_nav_menus(
       array(
-        'fomenu' => 'Fejléc menü'
+        'fomenu'     => 'Fejléc menü',
+        'lablecmenu' => 'Lábléc menü'
       )
     );
   }

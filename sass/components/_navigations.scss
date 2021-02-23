@@ -1,21 +1,49 @@
 [class^="menu-"][class$="-container"] {
 
   #fejlec-menu {
+    position: relative;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
 
-    .menu-item {
+    &.sticky {
+
+      >.menu-item {
+
+        >a {
+          @include font-size(17px);
+        }
+      }
+    }
+
+    >.menu-item {
       list-style: none;
       display: inline-block;
 
-      a {
+      &:hover,
+      &.current-menu-item,
+      &.current_page_item {
+
+        >a {
+          color: $pink;
+
+          &::after {
+            width: calc(100% - 11px);
+          }
+        }
+      }
+
+      >a {
         position: relative;
         display: block;
-        padding: 5px 10px;
+        padding: 5px 10px 0 10px;
         color: $black;
         @include font-size(21px);
         @include transition(color .3s ease);
+
+        &:not(:link) {
+          cursor: default;
+        }
 
         &::after {
           content: '';
@@ -28,15 +56,181 @@
         }
       }
 
+      >.sub-menu {
+        display: none;
+        position: absolute;
+        width: 1000px;
+        margin: 0 0 0 -34px;
+        padding: 15px 0 69px 47px;
+        background-color: $white;
+        @include font-size(0px);
+        text-align: left;
+        border: solid 1px $gray-3;
+
+        >.menu-item {
+          display: inline-block;
+          vertical-align: top;
+          width: auto;
+          padding: 10px;
+          list-style: none;
+          line-height: 1;
+
+          +.menu-item {
+            margin-left: 95px;
+          }
+
+          a {
+            display: inline-block;
+            font-family: $bookantiqua-bold;
+            @include font-size(14px);
+          }
+
+          >.sub-menu {
+            margin: 0;
+            padding: 10px 0 0 0;
+
+            >.menu-item {
+              list-style: none;
+
+              a {
+                font-family: $bookantiqua;
+                line-height: 1.9;
+                @include font-size(12.3px);
+
+                &:hover {
+                  color: $pink;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #lablec-menu {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    >.menu-item {
+      list-style: none;
+      display: inline-block;
+
       &:hover,
       &.current-menu-item,
       &.current_page_item {
 
-        a {
-          color: $pink;
+        >a {
+          color: $white;
+        }
+      }
+
+      >a {
+        position: relative;
+        display: block;
+        padding: 5px 10px 0 10px;
+        color: $black;
+        @include font-size(21px);
+        @include transition(color .3s ease);
+      }
+    }
+  }
+
+  #mobil-menu {
+    margin: 0;
+    padding-left: 0;
+    text-align: left;
+
+    >.menu-item {
+      list-style: none;
+      display: block;
+      border-bottom: solid 1px $gray-3;
+
+      +.menu-item {
+        border-top: solid 1px $gray;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &.menu-item-has-children {
+
+        >a {
+          position: relative;
 
           &::after {
-            width: calc(100% - 11px);
+            content: '\005B';
+            position: absolute;
+            top: 3px;
+            right: -15px;
+            color: $gray-1;
+            font-family: $websymbol;
+            @include font-size(19px);
+          }
+        }
+
+        >.sub-menu {
+
+          >.menu-item-has-children {
+
+            >a {
+              position: relative;
+
+              &::after {
+                content: '\005B';
+                position: absolute;
+                top: 3px;
+                right: -15px;
+                color: $gray-1;
+                font-family: $websymbol;
+                @include font-size(19px);
+              }
+            }
+          }
+        }
+      }
+
+      >a {
+        display: inline-block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        @include font-size(21px);
+      }
+
+      >.sub-menu {
+        display: none;
+        margin: 0;
+        padding-left: 15px;
+
+        >.menu-item {
+          list-style: none;
+          display: block;
+
+          >a {
+            display: inline-block;
+            margin-bottom: 15px;
+            @include font-size(19px);
+          }
+
+          >.sub-menu {
+            display: none;
+            margin: 0;
+            padding-left: 15px;
+
+            >.menu-item {
+              list-style: none;
+              display: block;
+
+              >a {
+                display: inline-block;
+                margin-bottom: 15px;
+                @include font-size(17px);
+              }
+            }
           }
         }
       }
@@ -92,22 +286,22 @@
   [class^="menu-"][class$="-container"] {
 
     #fejlec-menu {
-  
+
       .menu-item {
-  
+
         a {
-  
+
           &::after {
 
           }
         }
-  
+
         &:hover,
         &.current-menu-item,
         &.current_page_item {
-  
+
           a {
-  
+
             &::after {
 
             }
@@ -116,25 +310,25 @@
       }
     }
   }
-  
+
   .site-header__languages-menu {
-  
+
     .site-header__languages-item {
-  
+
       .site-header__languages-link,
       .site-header__languages-current {
         @include font-size(17px);
       }
-  
+
       .site-header__languages-link {
-  
+
         &:hover {
 
         }
       }
-  
+
       .site-header__languages-current {
-  
+
         &::after {
 
         }
@@ -153,23 +347,23 @@
   [class^="menu-"][class$="-container"] {
 
     #fejlec-menu {
-  
+
       .menu-item {
-  
+
         a {
           @include font-size(16px);
-  
+
           &::after {
 
           }
         }
-  
+
         &:hover,
         &.current-menu-item,
         &.current_page_item {
-  
+
           a {
-  
+
             &::after {
 
             }
@@ -178,25 +372,25 @@
       }
     }
   }
-  
+
   .site-header__languages-menu {
-  
+
     .site-header__languages-item {
-  
+
       .site-header__languages-link,
       .site-header__languages-current {
 
       }
-  
+
       .site-header__languages-link {
-  
+
         &:hover {
 
         }
       }
-  
+
       .site-header__languages-current {
-  
+
         &::after {
 
         }
@@ -210,23 +404,23 @@
   [class^="menu-"][class$="-container"] {
 
     #fejlec-menu {
-  
+
       .menu-item {
-  
+
         a {
           @include font-size(19px);
-  
+
           &::after {
 
           }
         }
-  
+
         &:hover,
         &.current-menu-item,
         &.current_page_item {
-  
+
           a {
-  
+
             &::after {
 
             }
@@ -235,25 +429,25 @@
       }
     }
   }
-  
+
   .site-header__languages-menu {
-  
+
     .site-header__languages-item {
-  
+
       .site-header__languages-link,
       .site-header__languages-current {
 
       }
-  
+
       .site-header__languages-link {
-  
+
         &:hover {
 
         }
       }
-  
+
       .site-header__languages-current {
-  
+
         &::after {
 
         }

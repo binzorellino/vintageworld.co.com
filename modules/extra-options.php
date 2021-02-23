@@ -13,6 +13,14 @@
       add_filter('admin_init', array(&$this, 'register_fields__creator'));
 
       add_filter('admin_init', array(&$this, 'register_fields__keyword'));
+      // Általános beállítások - Faceboolin megadása
+      add_filter('admin_init', array(&$this, 'register_fields__facebook'));
+      // Általános beállítások - Instagram link megadása
+      add_filter('admin_init', array(&$this, 'register_fields__instagram'));
+      // Általános beállítások - Pinterest link megadása
+      add_filter('admin_init', array(&$this, 'register_fields__pinterest'));
+      // Általános beállítások - Tik-Tok link megadása
+      add_filter('admin_init', array(&$this, 'register_fields__tiktok'));
     }
 
 
@@ -59,6 +67,42 @@
     function fields__keyword_html(){
       $value = get_option('general_option_keyword', '');
       echo '<textarea rows="5" class="regular-text code" id="general_option_keyword" name="general_option_keyword" value="'.$value.'"></textarea>';
+    }
+
+    function register_fields__facebook(){
+      register_setting('general', 'general_option_facebook', 'esc_attr');
+      add_settings_field('general_option_facebook', '<label for="general_option_facebook">Facebook lnk</label>', array(&$this, 'fields__facebook_html'), 'general');
+    }
+    function fields__facebook_html(){
+      $value = get_option('general_option_facebook', '');
+      echo '<input class="regular-text code" type="text" id="general_option_facebook" name="general_option_facebook" value="'.$value.'">';
+    }
+
+    function register_fields__instagram(){
+      register_setting('general', 'general_option_instagram', 'esc_attr');
+      add_settings_field('general_option_instagram', '<label for="general_option_instagram">Instagram link</label>', array(&$this, 'fields__instagram_html'), 'general');
+    }
+    function fields__instagram_html(){
+      $value = get_option('general_option_instagram', '');
+      echo '<input class="regular-text code" type="text" id="general_option_instagram" name="general_option_instagram" value="'.$value.'">';
+    }
+
+    function register_fields__pinterest(){
+      register_setting('general', 'general_option_pinterest', 'esc_attr');
+      add_settings_field('general_option_pinterest', '<label for="general_option_pinterest">Pinterest link</label>', array(&$this, 'fields__pinterest_html'), 'general');
+    }
+    function fields__pinterest_html(){
+      $value = get_option('general_option_pinterest', '');
+      echo '<input class="regular-text code" type="text" id="general_option_pinterest" name="general_option_pinterest" value="'.$value.'">';
+    }
+
+    function register_fields__tiktok(){
+      register_setting('general', 'general_option_tiktok', 'esc_attr');
+      add_settings_field('general_option_tiktok', '<label for="general_option_tiktok">Tik Tok link</label>', array(&$this, 'fields__tiktok_html'), 'general');
+    }
+    function fields__tiktok_html(){
+      $value = get_option('general_option_tiktok', '');
+      echo '<input class="regular-text code" type="text" id="general_option_tiktok" name="general_option_tiktok" value="'.$value.'">';
     }
 
   }

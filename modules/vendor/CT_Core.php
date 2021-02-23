@@ -21,15 +21,15 @@ if ( ! class_exists( 'Taxonomy_Core' ) ) :
     public function __construct( $taxonomy, $arg_overrides = array(), $object_types = array( 'post' ) ) {
 
       if ( ! is_array( $taxonomy ) ) {
-        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'kvbf' ) );
+        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'bitdev' ) );
       }
 
       if ( ! isset( $taxonomy[0], $taxonomy[1], $taxonomy[2] ) ) {
-        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'kvbf' ) );
+        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'bitdev' ) );
       }
 
       if ( ! is_string( $taxonomy[0] ) || ! is_string( $taxonomy[1] ) || ! is_string( $taxonomy[2] ) ) {
-        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'kvbf' ) );
+        wp_die( __( 'A single, plural és slug megadása kötelező a működéshez', 'bitdev' ) );
       }
 
       $this->singular      = $taxonomy[0];
@@ -54,25 +54,25 @@ if ( ! class_exists( 'Taxonomy_Core' ) ) :
       $labels = array(
         'name'                       => $this->plural,
         'singular_name'              => $this->singular,
-        'search_items'               => sprintf( __( 'Keresés a %s között', 'kvbf' ), $this->plural ),
-        'all_items'                  => sprintf( __( 'Összes %s', 'kvbf' ), $this->plural ),
-        'edit_item'                  => sprintf( __( '%s szerkesztése', 'kvbf' ), $this->singular ),
-        'view_item'                  => sprintf( __( '%s megtekintése', 'kvbf' ), $this->singular ),
-        'update_item'                => sprintf( __( '%s frissítése', 'kvbf' ), $this->singular ),
-        'add_new_item'               => sprintf( __( 'Új %s létrehozása', 'kvbf' ), $this->singular ),
-        'new_item_name'              => sprintf( __( 'Új %s név', 'kvbf' ), $this->singular ),
-        'not_found'                  => sprintf( __( 'Nincsenek létrehozott %s', 'kvbf' ), $this->plural ),
-        'no_terms'                   => sprintf( __( 'Nincs %s', 'kvbf' ), $this->plural ),
+        'search_items'               => sprintf( __( 'Keresés a %s között', 'bitdev' ), $this->plural ),
+        'all_items'                  => sprintf( __( 'Összes %s', 'bitdev' ), $this->plural ),
+        'edit_item'                  => sprintf( __( '%s szerkesztése', 'bitdev' ), $this->singular ),
+        'view_item'                  => sprintf( __( '%s megtekintése', 'bitdev' ), $this->singular ),
+        'update_item'                => sprintf( __( '%s frissítése', 'bitdev' ), $this->singular ),
+        'add_new_item'               => sprintf( __( 'Új %s létrehozása', 'bitdev' ), $this->singular ),
+        'new_item_name'              => sprintf( __( 'Új %s név', 'bitdev' ), $this->singular ),
+        'not_found'                  => sprintf( __( 'Nincsenek létrehozott %s', 'bitdev' ), $this->plural ),
+        'no_terms'                   => sprintf( __( 'Nincs %s', 'bitdev' ), $this->plural ),
 
         // Hierarchical stuff
-        'parent_item'       => $hierarchical ? sprintf( __( '%s szülője', 'kvbf' ), $this->singular ) : null,
-        'parent_item_colon' => $hierarchical ? sprintf( __( '%s szülője:', 'kvbf' ), $this->singular ) : null,
+        'parent_item'       => $hierarchical ? sprintf( __( '%s szülője', 'bitdev' ), $this->singular ) : null,
+        'parent_item_colon' => $hierarchical ? sprintf( __( '%s szülője:', 'bitdev' ), $this->singular ) : null,
 
         // Non-hierarchical stuff
-        'popular_items'              => $hierarchical ? null : sprintf( __( 'Népszerű %s elem(ek)', 'kvbf' ), $this->plural ),
-        'separate_items_with_commas' => $hierarchical ? null : sprintf( __( '%s elemek vesszővel elválasztva', 'kvbf' ), $this->plural ),
-        'add_or_remove_items'        => $hierarchical ? null : sprintf( __( '%s elem hozzáadása vagy eltávolítása', 'kvbf' ), $this->plural ),
-        'choose_from_most_used'      => $hierarchical ? null : sprintf( __( 'Válaszd a leghasználtabb %s elemet', 'kvbf' ), $this->plural ),
+        'popular_items'              => $hierarchical ? null : sprintf( __( 'Népszerű %s elem(ek)', 'bitdev' ), $this->plural ),
+        'separate_items_with_commas' => $hierarchical ? null : sprintf( __( '%s elemek vesszővel elválasztva', 'bitdev' ), $this->plural ),
+        'add_or_remove_items'        => $hierarchical ? null : sprintf( __( '%s elem hozzáadása vagy eltávolítása', 'bitdev' ), $this->plural ),
+        'choose_from_most_used'      => $hierarchical ? null : sprintf( __( 'Válaszd a leghasználtabb %s elemet', 'bitdev' ), $this->plural ),
       );
 
       $defaults = array(

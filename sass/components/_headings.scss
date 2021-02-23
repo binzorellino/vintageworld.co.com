@@ -7,3 +7,158 @@ h6 {
   clear: both;
   font-weight: normal;
 }
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+.entry-title {
+  line-height: 1;
+  margin-top: .2em;
+  @include font-size(60px);
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+  .entry-title {
+    @include font-size(40px);
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+  .entry-title {
+
+  }
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+  .entry-title {
+    @include font-size(50px);
+  }
+}
+
+// tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  h1 {
+
+  }
+
+  h2 {
+
+  }
+
+  h3 {
+
+  }
+
+  h4 {
+
+  }
+
+  h5 {
+
+  }
+
+  h6 {
+
+  }
+
+  .entry-title {
+    @include font-size(55px);
+  }
+}

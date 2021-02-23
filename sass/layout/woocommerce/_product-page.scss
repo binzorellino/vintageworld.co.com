@@ -1,0 +1,553 @@
+.woocommerce {
+
+  .product {
+    @include clearfix;
+
+    .woocommerce-product-gallery {
+      float: left;
+      width: 40%;
+      text-align: center;
+      margin-bottom: 40px;
+
+      .woocommerce-product-gallery__wrapper {
+        margin: 0;
+
+        .woocommerce-product-gallery__image {
+          display: inline-block;
+          width: auto;
+          margin: 10px;
+
+          a {
+            display: block;
+            line-height: 0;
+
+            .wp-post-image {
+
+            }
+          }
+
+          &:first-child {
+            display: block;
+            margin: 0 0 10px 0;
+          }
+        }
+      }
+    }
+
+    .summary {
+      float: left;
+      width: 60%;
+      padding-left: 25px;
+      margin-bottom: 40px;
+
+      .product_title {
+        margin: 0;
+        padding: 10px 0 30px;
+        border-bottom: solid 1px $gray-3;
+        @include font-size(40px);
+      }
+
+      .price {
+        margin: 0;
+        padding: 20px 0;
+        border-bottom: solid 1px $gray-3;
+
+        .woocommerce-Price-amount {
+          display: inline-block;
+          line-height: 1;
+          @include font-size(50px);
+
+          .woocommerce-Price-currencySymbol {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .woocommerce-product-details__short-description {
+        padding-top: 25px;
+
+        h5 {
+          margin: 0;
+
+          strong {
+            @include font-size(25px);
+          }
+        }
+
+        ul {
+          margin: 0;
+          padding: 20px 0 30px 30px;
+
+           li {
+
+           }
+        }
+      }
+
+      .cart {
+
+        .quantity {
+          display: inline-block;
+
+          input {
+            width: 100px;
+          }
+        }
+      }
+
+      .product_meta {
+        margin-top: 40px;
+
+        >span {
+          display: block;
+        }
+      }
+    }
+
+    .woocommerce-tabs {
+      clear: left;
+
+      .wc-tabs {
+        margin: 30px 0 0;
+        padding: 0;
+        text-align: center;
+        @include font-size(0px);
+        border-bottom: solid 20px $white;
+
+        li {
+          list-style: none;
+          display: inline-block;
+          vertical-align: bottom;
+          width: 49%;
+          background-color: $gray-3;
+          border-top: solid 1px $gray-3;
+          border-left: solid 1px $gray-3;
+          border-right: solid 1px $gray-3;
+
+          &:hover {
+            background-color: $pink;
+          }
+
+          +li {
+            margin-left: 2%;
+          }
+
+          &.active {
+            position: relative;
+            background-color: $white;
+
+            &:after {
+              content: '';
+              position: absolute;
+              display: block;
+              top: calc( 100% + 1px );
+              left: -1px;
+              width: calc( 100% + 2px );
+              height: 20px;
+              background-color:$white;
+              border-left: solid 1px $gray-3;
+              border-right: solid 1px $gray-3;
+            }
+          }
+
+          a {
+            display: block;
+            padding: 20px 15px;
+            @include font-size(30px);
+          }
+        }
+      }
+
+      .woocommerce-Tabs-panel {
+        padding: 15px;
+        border: solid 1px $gray;
+
+        h2 {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .related {
+      float: left;
+      width: 100%;
+    }
+  }
+}
+
+
+// mobil álló
+@include screen( $null, ($md - 1) ) {
+  .woocommerce {
+
+    .product {
+
+      &.type-product {
+
+      }
+
+      .woocommerce-product-gallery {
+        width: 100%;
+
+        .woocommerce-product-gallery__wrapper {
+
+          .woocommerce-product-gallery__image {
+
+            a {
+
+              .wp-post-image {
+
+              }
+            }
+
+            &:first-child {
+
+            }
+          }
+        }
+      }
+
+      .summary {
+        width: 100%;
+
+        .product_title {
+          @include font-size(30px);
+        }
+
+        .price {
+
+          .woocommerce-Price-amount {
+            @include font-size(30px);
+
+            .woocommerce-Price-currencySymbol {
+
+            }
+          }
+        }
+
+        .woocommerce-product-details__short-description {
+
+          h5 {
+
+            strong {
+              @include font-size(17px);
+            }
+          }
+
+          ul {
+
+            li {
+              @include font-size(15px);
+            }
+          }
+        }
+
+        .cart {
+
+          .quantity {
+
+            input {
+
+            }
+          }
+        }
+
+        .product_meta {
+
+          >span {
+
+          }
+        }
+      }
+
+      .woocommerce-tabs {
+
+        .wc-tabs {
+
+          li {
+
+            &:hover {
+
+            }
+
+            +li {
+
+            }
+
+            &.active {
+
+              &:after {
+
+              }
+            }
+
+            a {
+              min-height: 96px;
+              @include font-size(21px);
+            }
+          }
+        }
+
+        .woocommerce-Tabs-panel {
+
+          h2 {
+
+          }
+        }
+      }
+
+      .related {
+
+      }
+    }
+  }
+}
+
+// mobil fekvő
+@include screen( $null, ($md - 1), landscape ) {
+
+}
+
+// tablet álló
+@include screen( $md, ($lg - 1) ) {
+  .woocommerce {
+
+    .product {
+
+      &.type-product {
+
+      }
+
+      .woocommerce-product-gallery {
+
+        .woocommerce-product-gallery__wrapper {
+
+          .woocommerce-product-gallery__image {
+
+            a {
+
+              .wp-post-image {
+
+              }
+            }
+
+            &:first-child {
+
+            }
+          }
+        }
+      }
+
+      .summary {
+
+        .product_title {
+          @include font-size(35px);
+        }
+
+        .price {
+
+          .woocommerce-Price-amount {
+            @include font-size(40px);
+
+            .woocommerce-Price-currencySymbol {
+
+            }
+          }
+        }
+
+        .woocommerce-product-details__short-description {
+
+          h5 {
+
+            strong {
+              @include font-size(21px);
+            }
+          }
+
+          ul {
+
+            li {
+              @include font-size(17px);
+            }
+          }
+        }
+
+        .cart {
+
+          .quantity {
+
+            input {
+
+            }
+          }
+        }
+
+        .product_meta {
+
+          >span {
+
+          }
+        }
+      }
+
+      .woocommerce-tabs {
+
+        .wc-tabs {
+
+          li {
+
+            &:hover {
+
+            }
+
+            +li {
+
+            }
+
+            &.active {
+
+              &:after {
+
+              }
+            }
+
+            a {
+              @include font-size(24px);
+            }
+          }
+        }
+
+        .woocommerce-Tabs-panel {
+
+          h2 {
+
+          }
+        }
+      }
+
+      .related {
+
+      }
+    }
+  }
+}
+
+// tablet fekvő
+@include screen($lg, ($xl - 1)) {
+  .woocommerce {
+
+    .product {
+
+      &.type-product {
+
+      }
+
+      .woocommerce-product-gallery {
+
+        .woocommerce-product-gallery__wrapper {
+
+          .woocommerce-product-gallery__image {
+
+            a {
+
+              .wp-post-image {
+
+              }
+            }
+
+            &:first-child {
+
+            }
+          }
+        }
+      }
+
+      .summary {
+
+        .product_title {
+
+        }
+
+        .price {
+
+          .woocommerce-Price-amount {
+
+            .woocommerce-Price-currencySymbol {
+
+            }
+          }
+        }
+
+        .woocommerce-product-details__short-description {
+
+          h5 {
+
+            strong {
+
+            }
+          }
+
+          ul {
+
+          }
+        }
+
+        .cart {
+
+          .quantity {
+
+            input {
+
+            }
+          }
+        }
+
+        .product_meta {
+
+          >span {
+
+          }
+        }
+      }
+
+      .woocommerce-tabs {
+
+        .wc-tabs {
+
+          li {
+
+            &:hover {
+
+            }
+
+            +li {
+
+            }
+
+            &.active {
+
+              &:after {
+
+              }
+            }
+
+            a {
+
+            }
+          }
+        }
+
+        .woocommerce-Tabs-panel {
+
+          h2 {
+
+          }
+        }
+      }
+
+      .related {
+
+      }
+    }
+  }
+}

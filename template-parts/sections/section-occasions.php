@@ -6,16 +6,8 @@ if( $post_629 ) {
 }
 wp_reset_postdata();
 
-$args_occasions = array(
-  'post_type'        => 'occasions',
-  'no_found_rows'    => 1,
-  'posts_per_page'   => 7,
-  'suppress_filters' => false,
-  'orderby'          => 'menu_order',
-  'order'            => 'DESC'
-);
-$occasions = get_posts($args_occasions);
-if ( $occasions ) :
+$product_occasions = get_terms( 'pa_occasion', array( 'hide_empty' => false, 'parent' => 0 ) );
+if ( $product_occasions ) :
 ?>
 <section class="occasions-section">
   <div class="container">
@@ -28,29 +20,33 @@ if ( $occasions ) :
         <div class="occasions__container">
           <?php
           $i = 0;
-          foreach ( $occasions as $occasion ) :
-          setup_postdata( $occasion );
+
+          foreach ( $product_occasions as $term ) :
+
+          $term_title = $term->name;
+          $term_link  = get_term_link( $term->term_id );
+          $term_thumb = get_field('kep','pa_occasion_'.$term->term_id);
           $i++;
-          $bg_link = get_field( 'alkalom_-_hatter', $occasion->ID );
-          if ( $bg_link == '' ) {
+
+          if ( $term_thumb == '' ) {
             if ( $i < 2 ) {
-              $bg_resized = get_template_directory_uri() . '/images/no-image_occasion_306x696.png';
+              $term_thumb_resized = get_template_directory_uri() . '/images/no-image_occasion_306x616.png';
             } else {
-              $bg_resized = get_template_directory_uri() . '/images/no-image_occasion_306x346.png';
+              $term_thumb_resized = get_template_directory_uri() . '/images/no-image_occasion_306x306.png';
             }
           } else {
             if ( $i < 2 ) {
-              $bg_resized = aq_resize( $bg_link, 306, 616, true, true, true );
+              $term_thumb_resized = aq_resize( $term_thumb, 306, 616, true, true, true );
             } else {
-              $bg_resized = aq_resize( $bg_link, 306, 306, true, true, true );
+              $term_thumb_resized = aq_resize( $term_thumb, 306, 306, true, true, true );
             }
           }
           ?>
           <figure class="occasions__item">
-            <a class="occasions__link" href="<?php the_field( 'alkalom_-_link', $occasion->ID ); ?>">
-              <img class="occasions__bg" src="<?php echo $bg_resized; ?>" alt="<?php echo get_the_title( $occasion->ID ); ?>" />
+            <a class="occasions__link" href="<?php echo $term_link; ?>">
+              <img class="occasions__bg" src="<?php echo $term_thumb_resized; ?>" alt="<?php echo $term_title; ?>" />
               <i class="occasions__overlay"></i>
-              <figcaption class="occasions__caption"><?php echo get_the_title( $occasion->ID ); ?></figcaption>
+              <figcaption class="occasions__caption"><?php echo $term_title; ?></figcaption>
             </a>
           </figure>
           <?php
@@ -61,7 +57,7 @@ if ( $occasions ) :
     </div>
   </div>
 </section>
-<?php 
-endif;
+<?php
+endif; // ( $product_occasions )
 wp_reset_postdata();
 ?>

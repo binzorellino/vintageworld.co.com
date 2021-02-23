@@ -2,7 +2,7 @@
 function wp_breadcrumbs_generator() {
 
   // Settings
-  $separator          = '&raquo;';
+  $separator          = '/';
   $breadcrums_id      = 'custbread';
   $breadcrums_class   = 'custbread';
   $you_are_here       = __('You are here:', TEXTDOMAIN);

@@ -38,7 +38,7 @@
       &:hover {
 
         .occasions__link {
-  
+
           .occasions__bg {
             @include transform(scale(1.04));
           }
@@ -46,7 +46,7 @@
           .occasions__overlay {
             opacity: .7;
           }
-    
+
           .occasions__caption {
 
           }
@@ -72,7 +72,7 @@
           opacity: 0;
           @include transition(opacity .3s ease);
         }
-  
+
         .occasions__caption {
           position: absolute;
           line-height: 1.5;
@@ -105,61 +105,61 @@
 // mobil álló
 @include screen( $null, ($md - 1) ) {
   .occasions-section {
-  
+
     .occasions__heading {
-  
+
       .occasions__title {
         margin-top: 1.8em;
         @include font-size(28px);
       }
-  
+
       .occasions__subtitle {
         margin-bottom: 27px;
         @include font-size(16px);
       }
-  
+
       .occasions__desc {
 
       }
     }
-  
+
     .occasions__container {
-  
+
       .occasions__item {
         width: calc((100% - 8px)/ 2);
         margin-bottom: 1px;
-  
+
         &:hover {
-  
+
           .occasions__link {
-    
+
             .occasions__bg {
 
             }
-  
+
             .occasions__overlay {
 
             }
-      
+
             .occasions__caption {
 
             }
           }
         }
-  
+
         .occasions__link {
-  
+
           .occasions__bg {
 
           }
-  
+
           .occasions__overlay {
 
           }
-    
+
           .occasions__caption {
             @include font-size(26px);
-  
+
             &::after {
 
             }
@@ -173,57 +173,57 @@
 // mobil fekvő
 @include screen( $null, ($md - 1), landscape ) {
   .occasions-section {
-  
+
     .occasions__heading {
-  
+
       .occasions__title {
 
       }
-  
+
       .occasions__subtitle {
 
       }
-  
+
       .occasions__desc {
 
       }
     }
-  
+
     .occasions__container {
-  
+
       .occasions__item {
         width: calc((100% - 16px)/ 4);
-  
+
         &:hover {
-  
+
           .occasions__link {
-    
+
             .occasions__bg {
 
             }
-  
+
             .occasions__overlay {
 
             }
-      
+
             .occasions__caption {
 
             }
           }
         }
-  
+
         .occasions__link {
-  
+
           .occasions__bg {
 
           }
-  
+
           .occasions__overlay {
 
           }
-    
+
           .occasions__caption {
-  
+
             &::after {
 
             }
@@ -237,59 +237,59 @@
 // tablet álló
 @include screen( $md, ($lg - 1) ) {
   .occasions-section {
-  
+
     .occasions__heading {
-  
+
       .occasions__title {
         margin-top: .9em;
         @include font-size(37px);
       }
-  
+
       .occasions__subtitle {
         margin-bottom: 27px;
       }
-  
+
       .occasions__desc {
 
       }
     }
-  
+
     .occasions__container {
-  
+
       .occasions__item {
         margin-bottom: 1px;
-  
+
         &:hover {
-  
+
           .occasions__link {
-    
+
             .occasions__bg {
 
             }
-  
+
             .occasions__overlay {
 
             }
-      
+
             .occasions__caption {
 
             }
           }
         }
-  
+
         .occasions__link {
-  
+
           .occasions__bg {
 
           }
-  
+
           .occasions__overlay {
 
           }
-    
+
           .occasions__caption {
             @include font-size(26px);
-  
+
             &::after {
 
             }
@@ -303,58 +303,58 @@
 //tablet fekvő
 @include screen($lg, ($xl - 1)) {
   .occasions-section {
-  
+
     .occasions__heading {
-  
+
       .occasions__title {
         margin-top: .9em;
       }
-  
+
       .occasions__subtitle {
 
       }
-  
+
       .occasions__desc {
 
       }
     }
-  
+
     .occasions__container {
-  
+
       .occasions__item {
         margin-bottom: 1px;
-  
+
         &:hover {
-  
+
           .occasions__link {
-    
+
             .occasions__bg {
 
             }
-  
+
             .occasions__overlay {
 
             }
-      
+
             .occasions__caption {
 
             }
           }
         }
-  
+
         .occasions__link {
-  
+
           .occasions__bg {
 
           }
-  
+
           .occasions__overlay {
 
           }
-    
+
           .occasions__caption {
             @include font-size(32px);
-  
+
             &::after {
 
             }

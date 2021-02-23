@@ -1,0 +1,428 @@
+.product-list-page,
+.subcategories-list-wrapper {
+
+  @include clearfix();
+
+}
+
+.product-list-page {
+  margin-top: 100px;
+
+}
+
+.subcategories-list-wrapper {
+  margin-top: 45px;
+
+}
+
+.subcategory-title {
+  font-weight: normal;
+  @include font-size(37px);
+  color: $gray;
+  margin: 0;
+  padding: 0;
+  line-height: 1.23;
+
+}
+
+.bottom-info-sort-line {
+  padding: 15px 0;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+
+  .inner-container {
+    padding: 0 50px;
+
+    .col-md-6 {
+
+      @include first(1) {
+        padding-left: 0;
+
+      }
+
+      @include first(2) {
+        padding-right: 0;
+
+      }
+
+    }
+
+  }
+
+  .second-div {
+    text-align: right;
+
+  }
+
+  .woocommerce-result-count {
+    margin: 8px 0 0;
+    padding: 0;
+    font-weight: normal;
+    @include font-size(19px);
+    color: $gray;
+
+    .sum {
+      display: inline-block;
+      margin-left: 70px;
+
+    }
+
+  }
+
+  .woocommerce-pagination {
+
+    ul.page-numbers {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 0;
+
+      li {
+        list-style: none;
+        display: inline-block;
+
+        a.page-numbers,
+        span.page-numbers {
+          display: block;
+          font-weight: normal;
+          text-align: center;
+          margin-right: 25px;
+          @include font-size(22px);
+          line-height: 45px;
+          color: $black-1;
+          float: left;
+          background: $white;
+
+          &:hover {
+            color: $pink;
+
+          }
+
+          &.current {
+            text-decoration: underline;
+
+          }
+
+          &.next,
+          &.prev {
+            font-family: $websymbol;
+            @include font-size(48px);
+            color: $black-1;
+
+            &:hover {
+              color: $pink;
+
+            }
+
+          }
+
+          &.next {
+            margin-left: 10px;
+
+          }
+
+          &.prev {
+            margin-right: 35px;
+
+          }
+
+        }
+
+        &:last-child {
+
+          a.page-numbers,
+          span.page-numbers {
+            margin-right: 0;
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+
+}
+
+@include screen($null, ($md - 1)) {
+
+  .product-list-page {
+    margin-top: 80px;
+
+  }
+
+  .subcategory-title {
+    @include font-size(26px);
+
+  }
+
+  .bottom-info-sort-line {
+    padding: 10px 0;
+    text-align: center;
+
+    .inner-container {
+      padding: 0 25px;
+
+      .col-md-6 {
+
+        @include first(1) {
+          width: 100%;
+          float: none;
+          padding: 0;
+
+        }
+
+        @include last(1) {
+          width: 100%;
+          padding: 0;
+          float: none;
+          margin-top: 15px;
+          text-align: center;
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-result-count {
+      @include font-size(13px);
+
+      .sum {
+        margin-left: 20px;
+
+      }
+
+    }
+
+    .woocommerce-pagination {
+
+      ul.page-numbers {
+
+        li {
+          list-style: none;
+          display: inline-block;
+
+          a.page-numbers,
+          span.page-numbers {
+            margin-right: 20px;
+            @include font-size(18px);
+            line-height: 40px;
+
+            &.next,
+            &.prev {
+              @include font-size(35px);
+
+            }
+
+            &.prev {
+              margin-right: 30px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen($null, ($md - 1), landscape) {
+
+  .bottom-info-sort-line {
+    text-align: left;
+
+    .inner-container {
+      padding: 0 25px;
+
+      .col-md-6 {
+
+        @include first(1) {
+          width: 45%;
+          float: left;
+
+        }
+
+        @include last(1) {
+          width: 55%;
+          float: left;
+          margin-top: 0;
+          text-align: right;
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-result-count {
+      @include font-size(12px);
+
+      .sum {
+        margin-left: 15px;
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen( $md, ($lg - 1) ) {
+
+  .product-list-page {
+    margin-top: 80px;
+
+  }
+
+  .subcategory-title {
+    @include font-size(30px);
+
+  }
+
+  .bottom-info-sort-line {
+    padding: 15px 0;
+
+    .inner-container {
+      padding: 0 25px;
+
+      .col-md-6 {
+
+        @include first(1) {
+          width: 55%;
+          float: left;
+
+        }
+
+        @include last(1) {
+          width: 45%;
+          float: left;
+
+        }
+
+      }
+
+    }
+
+    .woocommerce-result-count {
+      @include font-size(16px);
+
+      .sum {
+        margin-left: 20px;
+
+      }
+
+    }
+
+    .woocommerce-pagination {
+
+      ul.page-numbers {
+
+        li {
+          list-style: none;
+          display: inline-block;
+
+          a.page-numbers,
+          span.page-numbers {
+            margin-right: 20px;
+            @include font-size(20px);
+            line-height: 37px;
+
+            &.next,
+            &.prev {
+              @include font-size(40px);
+
+            }
+
+            &.prev {
+              margin-right: 30px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include screen( $lg, ($xl - 1) ) {
+
+  .product-list-page {
+    margin-top: 80px;
+
+  }
+
+  .subcategory-title {
+    @include font-size(30px);
+
+  }
+
+  .bottom-info-sort-line {
+    padding: 15px 0;
+
+    .inner-container {
+      padding: 0 25px;
+
+    }
+
+    .woocommerce-result-count {
+      @include font-size(16px);
+
+      .sum {
+        margin-left: 50px;
+
+      }
+
+    }
+
+    .woocommerce-pagination {
+
+      ul.page-numbers {
+
+        li {
+          list-style: none;
+          display: inline-block;
+
+          a.page-numbers,
+          span.page-numbers {
+            margin-right: 20px;
+            @include font-size(20px);
+            line-height: 37px;
+
+            &.next,
+            &.prev {
+              @include font-size(40px);
+
+            }
+
+            &.prev {
+              margin-right: 30px;
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

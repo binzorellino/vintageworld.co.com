@@ -1,0 +1,186 @@
+.product-category {
+  width: 19%;
+  float: left;
+  margin-right: ( 100% - ( 19 * 5 ) ) / 4;
+  text-align: center;
+  color: $gray;
+
+  &:nth-child(5n) {
+    margin-right: 0;
+
+  }
+
+  a {
+    display: block;
+    color: $gray;
+
+    &:hover {
+      color: $pink;
+
+      .thumbnail {
+        border-color: $gray;
+
+      }
+
+    }
+
+  }
+
+  .thumbnail {
+    width: 152px;
+    height: 152px;
+    margin: 0 auto;
+    @include border-radius(50%);
+    border: 2px solid $pink;
+
+  }
+
+  .title {
+    margin: 20px 0 0;
+    padding: 0 15px;
+    @include font-size(19px);
+
+  }
+
+}
+
+@include screen($null, ($md - 1)) {
+
+  .product-category {
+    width: 49%;
+    margin-right: ( 100% - ( 49 * 2 ) ) / 1;
+    margin-top: 40px;
+
+    @include first(2) {
+      margin-top: 0;
+
+    }
+
+    &:nth-child(2n) {
+      margin-right: 0;
+
+    }
+
+    &:nth-child(5n) {
+      margin-right: ( 100% - ( 49 * 2 ) ) / 1;
+
+    }
+
+    .thumbnail {
+      width: 100px;
+      height: 100px;
+
+    }
+
+    .title {
+      margin: 20px 0 0;
+      padding: 0 15px;
+      @include font-size(15px);
+      line-height: 1.22em;
+
+    }
+
+  }
+
+}
+
+@include screen($null, ($md - 1), landscape) {
+
+  .product-category {
+    width: 32%;
+    margin-right: ( 100% - ( 32 * 3 ) ) / 2;
+    margin-top: 40px;
+
+    @include first(3) {
+      margin-top: 0;
+
+    }
+
+    &:nth-child(2n) {
+      margin-right: ( 100% - ( 32 * 3 ) ) / 2;
+
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+
+    }
+
+    &:nth-child(5n) {
+      margin-right: ( 100% - ( 49 * 2 ) ) / 1;
+
+    }
+
+  }
+
+}
+
+@include screen( $md, ($lg - 1) ) {
+
+  .product-category {
+    width: 24%;
+    margin-right: ( 100% - ( 24 * 4 ) ) / 3;
+    margin-top: 40px;
+
+    @include first(4) {
+      margin-top: 0;
+
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+
+    }
+
+    .thumbnail {
+      width: 122px;
+      height: 122px;
+
+    }
+
+    .title {
+      margin: 20px 0 0;
+      padding: 0 15px;
+      @include font-size(15px);
+      line-height: 1.22em;
+
+    }
+
+  }
+
+}
+
+@include screen( $lg, ($xl - 1) ) {
+
+  .product-category {
+    width: 24%;
+    margin-right: ( 100% - ( 24 * 4 ) ) / 3;
+    margin-top: 40px;
+
+    @include first(4) {
+      margin-top: 0;
+
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+
+    }
+
+    .thumbnail {
+      width: 122px;
+      height: 122px;
+
+    }
+
+    .title {
+      margin: 20px 0 0;
+      padding: 0 15px;
+      @include font-size(15px);
+      line-height: 1.22em;
+
+    }
+
+  }
+
+}
